@@ -1,0 +1,9 @@
+C:\Users\mario\Desktop\HW2_ChattingClient\bin\Debug\HW2_ChattingClient.exe.config
+C:\Users\mario\Desktop\HW2_ChattingClient\bin\Debug\HW2_ChattingClient.exe
+C:\Users\mario\Desktop\HW2_ChattingClient\bin\Debug\HW2_ChattingClient.pdb
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\HW2_ChattingClient.Properties.Resources.resources
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\HW2_ChattingClient.csproj.GenerateResource.cache
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\HW2_ChattingClient.exe
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\HW2_ChattingClient.pdb
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\HW2_ChattingClient.csprojAssemblyReference.cache
+C:\Users\mario\Desktop\HW2_ChattingClient\obj\Debug\ChatClient.Form1.resources
