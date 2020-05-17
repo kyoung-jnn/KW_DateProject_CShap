@@ -16,5 +16,18 @@ namespace KW_Project
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Visible = false; // 로그인 창 닫아놓기
+
+            RegisterForm registerform = new RegisterForm();
+            DialogResult result = registerform.ShowDialog();
+
+            if(result == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
+        }
     }
 }
