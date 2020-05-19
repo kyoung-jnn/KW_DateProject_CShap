@@ -9,9 +9,9 @@
   - 이상형 우선적으로 Home 상단에 떠야함
  
 * 원하는 상대 선택 메뉴 구상해야함
-  - 
+  
 ***
-
+    
 ## 개발환경: Mysql + Mysql Workbench + C# connector 필요
 
 https://dev.mysql.com/downloads/installer/ <== Installer
