@@ -84,6 +84,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label3
             // 
@@ -92,7 +93,7 @@
             this.label3.ForeColor = System.Drawing.Color.MistyRose;
             this.label3.Location = new System.Drawing.Point(50, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(463, 39);
+            this.label3.Size = new System.Drawing.Size(449, 38);
             this.label3.TabIndex = 7;
             this.label3.Text = "KwangWoon Date Project";
             // 

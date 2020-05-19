@@ -27,9 +27,23 @@ namespace KW_Project
 
         private void btnRegisterConfirm_Click(object sender, EventArgs e)
         {
+            if(R_txtId.Text == "")
+            {
+                MessageBox.Show("학번을 입력하세요!");
+                R_txtId.Focus();
+                return;
+            }
+            else if(R_txtPwd1.Text == "" || R_txtPwd2.Text == "")
+            {
+                MessageBox.Show("비밀번호를 입력하세요!");
+                R_txtPwd1.Focus();
+                return;
+            }
+
             if(R_txtPwd1.Text != R_txtPwd2.Text)
             {
                 MessageBox.Show("비밀번호가 다릅니다.");
+                R_txtPwd1.Focus();
                 return;
             }
             else
