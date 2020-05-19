@@ -61,6 +61,7 @@
             this.btnRegisterConfirm.TabIndex = 13;
             this.btnRegisterConfirm.Text = "회원가입";
             this.btnRegisterConfirm.UseVisualStyleBackColor = true;
+            this.btnRegisterConfirm.Click += new System.EventHandler(this.btnRegisterConfirm_Click);
             // 
             // label2
             // 
@@ -88,7 +89,6 @@
             this.R_txtPwd1.Name = "R_txtPwd1";
             this.R_txtPwd1.Size = new System.Drawing.Size(193, 25);
             this.R_txtPwd1.TabIndex = 10;
-            this.R_txtPwd1.TextChanged += new System.EventHandler(this.txtPwd_TextChanged);
             // 
             // R_txtId
             // 
@@ -103,7 +103,7 @@
             this.label3.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(196, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 39);
+            this.label3.Size = new System.Drawing.Size(158, 38);
             this.label3.TabIndex = 15;
             this.label3.Text = "Register";
             // 
