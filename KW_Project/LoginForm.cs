@@ -42,8 +42,15 @@ namespace KW_Project
                 {
                     if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
                     {
-                        MessageBox.Show("로그인 성공");
+                        this.Visible = false; // 로그인 창 닫아놓기
                         // 여기서 메뉴창 열기
+                        FirstSettingForm settingform = new FirstSettingForm();
+                        DialogResult result = settingform.ShowDialog();
+
+                        if (result == DialogResult.Cancel)
+                        {
+                            this.Visible = true;
+                        }
                     }
                 }
                 else // database에 정보가 없음
