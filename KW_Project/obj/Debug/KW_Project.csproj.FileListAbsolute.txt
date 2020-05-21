@@ -1,7 +1,6 @@
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\KW_Project.exe.config
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\KW_Project.exe
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\KW_Project.pdb
-C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csprojAssemblyReference.cache
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.loginForm.resources
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.Properties.Resources.resources
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csproj.GenerateResource.cache
@@ -24,3 +23,5 @@ C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\System.N
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\MySql.Data.xml
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.exe.config
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csproj.CopyComplete
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.FirstSettingForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csprojAssemblyReference.cache
