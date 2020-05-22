@@ -44,7 +44,7 @@ namespace KW_Project
                     {
                         this.Visible = false; // 로그인 창 닫아놓기
                         // 여기서 메뉴창 열기
-                        FirstSettingForm settingform = new FirstSettingForm();
+                        FirstSettingForm settingform = new FirstSettingForm(txtId.Text);
                         DialogResult result = settingform.ShowDialog();
 
                         if (result == DialogResult.Cancel)
