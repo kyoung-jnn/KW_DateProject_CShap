@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `profile_photo_data`
+--
+
+DROP TABLE IF EXISTS `profile_photo_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `profile_photo_data` (
+  `id` int NOT NULL,
+  `fileName` text,
+  `fileSize` bigint DEFAULT NULL,
+  `file` mediumblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `profile_photo_data`
+--
+
+LOCK TABLES `profile_photo_data` WRITE;
+/*!40000 ALTER TABLE `profile_photo_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `profile_photo_data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_data`
 --
 
@@ -25,11 +50,11 @@ DROP TABLE IF EXISTS `user_data`;
 CREATE TABLE `user_data` (
   `id` int NOT NULL,
   `pwd` int NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `gender` varchar(45) DEFAULT NULL,
-  `department` varchar(45) DEFAULT NULL,
-  `attraction` varchar(45) DEFAULT NULL,
-  `ideal` varchar(45) DEFAULT NULL,
+  `name` text,
+  `gender` text,
+  `department` text,
+  `attraction` text,
+  `ideal` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -53,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-21 16:48:47
+-- Dump completed on 2020-05-23  1:12:23
