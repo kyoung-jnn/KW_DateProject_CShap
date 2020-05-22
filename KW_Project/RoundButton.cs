@@ -8,14 +8,15 @@ using System.Windows.Forms;
 
 namespace KW_Project
 {
-    class CircleButton : Button
+    public class RoundButton : Button
     {
-        protected override void OnPaint(PaintEventArgs pevent)
+        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {
             GraphicsPath grPath = new GraphicsPath();
             grPath.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
             this.Region = new System.Drawing.Region(grPath);
-            base.OnPaint(pevent);
+            base.OnPaint(e);
         }
     }
+    
 }
