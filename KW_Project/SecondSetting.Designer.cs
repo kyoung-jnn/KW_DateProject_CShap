@@ -250,7 +250,7 @@
             this.groupBox2.Controls.Add(this.button16);
             this.groupBox2.Location = new System.Drawing.Point(39, 264);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(373, 111);
+            this.groupBox2.Size = new System.Drawing.Size(373, 124);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             // 

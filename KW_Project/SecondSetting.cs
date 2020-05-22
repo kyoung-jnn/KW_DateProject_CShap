@@ -14,8 +14,10 @@ namespace KW_Project
 {
     public partial class SecondSetting : Form
     {
-        public SecondSetting()
+        private string currentUserId;
+        public SecondSetting(string id)
         {
+            currentUserId = id;
             InitializeComponent();
         }
 
@@ -40,7 +42,15 @@ namespace KW_Project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            this.Visible = false; // 첫번째 세팅창 받기
 
+            ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId);
+            DialogResult result = ProfilePhotoform.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
         }
     }
 }

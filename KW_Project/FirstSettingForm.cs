@@ -14,8 +14,10 @@ namespace KW_Project
 {
     public partial class FirstSettingForm : Form
     {
-        public FirstSettingForm()
+        private string currentUserId;
+        public FirstSettingForm(string id)
         {
+            currentUserId = id;
             InitializeComponent();
         }
 
@@ -45,7 +47,7 @@ namespace KW_Project
         {
             this.Visible = false; // 첫번째 세팅창 받기
 
-            SecondSetting settingform = new SecondSetting();
+            SecondSetting settingform = new SecondSetting(currentUserId);
             DialogResult result = settingform.ShowDialog();
 
             if (result == DialogResult.Cancel)
