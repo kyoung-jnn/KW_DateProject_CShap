@@ -24,3 +24,5 @@ C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\bin\Debug\MySql.Da
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.exe.config
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csproj.CopyComplete
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.FirstSettingForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.csprojAssemblyReference.cache
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.SecondSetting.resources

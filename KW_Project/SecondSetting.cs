@@ -32,5 +32,15 @@ namespace KW_Project
                                                       , int nBottomRect
                                                       , int nWidthEllipse
                                                       , int nHeightEllipse);
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

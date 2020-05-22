@@ -70,6 +70,12 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SecondSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondSetting.Designer.cs">
+      <DependentUpon>SecondSetting.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondSetting.resx">
+      <DependentUpon>SecondSetting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

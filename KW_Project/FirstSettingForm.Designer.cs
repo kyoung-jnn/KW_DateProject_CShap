@@ -55,6 +55,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -63,8 +64,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(136, 152);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(136, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 21);
             this.label2.TabIndex = 6;
@@ -87,8 +88,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(162, 261);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(162, 259);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 21);
             this.label1.TabIndex = 8;
@@ -97,9 +98,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
             this.label3.Location = new System.Drawing.Point(162, 437);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
@@ -110,6 +111,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBack.Location = new System.Drawing.Point(129, 617);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(84, 36);
@@ -120,7 +122,9 @@
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNext.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnNext.Location = new System.Drawing.Point(228, 617);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 36);
@@ -137,7 +141,7 @@
             "소프트웨어학부",
             "컴퓨터공학부",
             "정보융합학부"});
-            this.departmentList.Location = new System.Drawing.Point(153, 195);
+            this.departmentList.Location = new System.Drawing.Point(153, 200);
             this.departmentList.Name = "departmentList";
             this.departmentList.Size = new System.Drawing.Size(150, 23);
             this.departmentList.TabIndex = 14;
@@ -145,10 +149,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(103, 46);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(103, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(250, 21);
             this.label4.TabIndex = 15;
@@ -156,7 +160,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(122, 87);
+            this.txtName.Location = new System.Drawing.Point(122, 105);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(125, 25);
             this.txtName.TabIndex = 16;
@@ -168,7 +172,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "남자",
             "여자"});
-            this.comboBox2.Location = new System.Drawing.Point(253, 88);
+            this.comboBox2.Location = new System.Drawing.Point(253, 106);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(74, 23);
             this.comboBox2.TabIndex = 17;
@@ -400,12 +404,26 @@
             this.button16.Text = "유머러스한";
             this.button16.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 26);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "자신의 프로필";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FirstSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(450, 690);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox2);
@@ -457,5 +475,6 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label5;
     }
 }
