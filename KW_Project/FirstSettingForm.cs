@@ -16,10 +16,8 @@ namespace KW_Project
     public partial class FirstSettingForm : Form
     {
         private string currentUserId;
-        string ID = null;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
-        DataSet ds;
-        MySqlDataAdapter da;
+     
         public FirstSettingForm(string id)
         {
             currentUserId = id;
@@ -91,29 +89,18 @@ namespace KW_Project
 
             if (!IsAttractSelected(attlist, attlist2))              //버튼이 3개씩 선택되지 않았을 경우 리턴
                 return;
-            MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
-
             // 이름, 성별, 학과, 본인어필, 이상형 전송
-            string CheckId = "SELECT * FROM user_data WHERE id = " + ID;
-            string insertQuery = "INSERT INTO user_data(name,gender,department,attraction) VALUES(" + txtName.Text + "," + cmbSex.SelectedItem.ToString() + "," + departmentList.SelectedItem.ToString() + "," +
-                                                                                                            SelectedAttraction(attlist) + SelectedAttraction(attlist2) + ")";
+            string insertQuery = "UPDATE user_data SET name=@name,gender=@gender, department=@department, attraction=" + SelectedAttraction(attlist) + SelectedAttraction(attlist2) + " WHERE id=@curID;";
+
             connection.Open();
-            MySqlCommand command1 = new MySqlCommand(CheckId, connection);
-            try
-            {
-                da = new MySqlDataAdapter(CheckId, connection);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
-                ds = new DataSet();
-                da.Fill(ds, "user_data");
-                DataRow curRow = ds.Tables["id"].Rows.Find(ID);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
             try
             {
+                command.Parameters.AddWithValue("@curID", currentUserId);
+                command.Parameters.AddWithValue("@name", txtName.Text);
+                command.Parameters.AddWithValue("@gender", cmbSex.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@department", departmentList.SelectedItem.ToString());
+
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("정상 전송");
@@ -125,7 +112,7 @@ namespace KW_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString()); // 여기서 오류
             }
 
             connection.Close();
@@ -195,5 +182,5 @@ namespace KW_Project
             }
         }
     }
-    
+
 }

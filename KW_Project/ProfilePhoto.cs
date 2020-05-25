@@ -68,7 +68,7 @@ namespace KW_Project
             MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
             MySqlCommand command = new MySqlCommand();
 
-            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@fileName,@fileSize,@file)"; //학번은 일단 1로함
+            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@fileName,@fileSize,@file)"; 
 
             try
             {
