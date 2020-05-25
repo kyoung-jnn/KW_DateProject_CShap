@@ -15,17 +15,36 @@ namespace KW_Project
 {
     public partial class FirstSettingForm : Form
     {
-        string currentUserId = null;
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=8983");
+        private string currentUserId;
+        string ID = null;
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
         DataSet ds;
         MySqlDataAdapter da;
-
         public FirstSettingForm(string id)
         {
             currentUserId = id;
             InitializeComponent();
+            SetBtnEvent();
         }
-
+        private void SetBtnEvent()
+        {
+            button1.Click += Btn_Click;
+            button2.Click += Btn_Click;
+            button3.Click += Btn_Click;
+            button4.Click += Btn_Click;
+            button5.Click += Btn_Click;
+            button6.Click += Btn_Click;
+            button7.Click += Btn_Click;
+            button8.Click += Btn_Click;
+            button9.Click += Btn_Click;
+            button10.Click += Btn_Click;
+            button11.Click += Btn_Click;
+            button12.Click += Btn_Click;
+            button13.Click += Btn_Click;
+            button14.Click += Btn_Click;
+            button15.Click += Btn_Click;
+            button16.Click += Btn_Click;
+        }
 
         private void FirstSettingForm_Load(object sender, EventArgs e)
         {
@@ -75,17 +94,26 @@ namespace KW_Project
             MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
 
             // 이름, 성별, 학과, 본인어필, 이상형 전송
-            string insertQuery = "UPDATE user_data SET name=@name,gender=@gender, department=@department, attraction=" + SelectedAttraction(attlist) + SelectedAttraction(attlist2) + " WHERE id=@curID;";
-
+            string CheckId = "SELECT * FROM user_data WHERE id = " + ID;
+            string insertQuery = "INSERT INTO user_data(name,gender,department,attraction) VALUES(" + txtName.Text + "," + cmbSex.SelectedItem.ToString() + "," + departmentList.SelectedItem.ToString() + "," +
+                                                                                                            SelectedAttraction(attlist) + SelectedAttraction(attlist2) + ")";
             connection.Open();
+            MySqlCommand command1 = new MySqlCommand(CheckId, connection);
+            try
+            {
+                da = new MySqlDataAdapter(CheckId, connection);
+                MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
+                ds = new DataSet();
+                da.Fill(ds, "user_data");
+                DataRow curRow = ds.Tables["id"].Rows.Find(ID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
             try
             {
-                command.Parameters.AddWithValue("@curID", currentUserId);
-                command.Parameters.AddWithValue("@name", txtName.Text);
-                command.Parameters.AddWithValue("@gender", cmbSex.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@department", departmentList.SelectedItem.ToString());
-
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("정상 전송");
@@ -97,11 +125,10 @@ namespace KW_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()); // 여기서 오류
+                MessageBox.Show(ex.ToString());
             }
 
             connection.Close();
-
             this.Visible = false; // 첫번째 세팅창 받기
 
             SecondSetting settingform = new SecondSetting(currentUserId);
@@ -112,8 +139,6 @@ namespace KW_Project
                 this.Visible = true;
             }
         }
-
-
         private bool IsAttractSelected(Button[] btns1, Button[] btns2)        //성격, 매력 버튼이 각각 3개 선택되었는지 체크
         {
             Color selected = Color.PaleGreen;     //선택되었을때의 색깔
@@ -142,7 +167,6 @@ namespace KW_Project
                 return false;
             }
         }
-
         private string SelectedAttraction(Button[] btns)           // 선택된 버튼들 string으로 반환
         {
             string ret = null;
@@ -153,11 +177,8 @@ namespace KW_Project
                 if (btns[i].BackColor == selected)
                     ret += btns[i].Text + "_";
             }
-            MessageBox.Show(ret);          
             return ret;
         }
-
-
         private void Btn_Click(object sender, EventArgs e)          //버튼들 공통 이벤트 처리
         {
             Color basic = Color.LightCoral;             //   -- 색 수정시 이부분 수정
@@ -174,5 +195,5 @@ namespace KW_Project
             }
         }
     }
-
+    
 }

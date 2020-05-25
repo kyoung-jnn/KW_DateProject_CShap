@@ -65,7 +65,7 @@ namespace KW_Project
             byte[] data;
             FileStream fs;
 
-            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=8983");
+            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
             MySqlCommand command = new MySqlCommand();
 
             insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@fileName,@fileSize,@file)"; 
