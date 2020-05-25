@@ -37,7 +37,7 @@
             this.departmentList = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -83,6 +83,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "신중한";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Btn_Click);
             // 
             // label1
             // 
@@ -165,17 +166,17 @@
             this.txtName.Size = new System.Drawing.Size(125, 25);
             this.txtName.TabIndex = 16;
             // 
-            // comboBox2
+            // cmbSex
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
             "남자",
             "여자"});
-            this.comboBox2.Location = new System.Drawing.Point(253, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(74, 23);
-            this.comboBox2.TabIndex = 17;
+            this.cmbSex.Location = new System.Drawing.Point(253, 106);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(74, 23);
+            this.cmbSex.TabIndex = 17;
             // 
             // button2
             // 
@@ -189,6 +190,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "열정적인";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button3
             // 
@@ -202,6 +204,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "말을 잘함";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button4
             // 
@@ -215,6 +218,7 @@
             this.button4.TabIndex = 20;
             this.button4.Text = "애교";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Btn_Click);
             // 
             // groupBox1
             // 
@@ -244,6 +248,7 @@
             this.button5.TabIndex = 21;
             this.button5.Text = "지적인";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button6
             // 
@@ -257,6 +262,7 @@
             this.button6.TabIndex = 24;
             this.button6.Text = "활발한";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button7
             // 
@@ -270,6 +276,7 @@
             this.button7.TabIndex = 22;
             this.button7.Text = "내성적인";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button8
             // 
@@ -283,6 +290,7 @@
             this.button8.TabIndex = 23;
             this.button8.Text = "털털한";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.Btn_Click);
             // 
             // groupBox2
             // 
@@ -312,6 +320,7 @@
             this.button9.TabIndex = 21;
             this.button9.Text = "예쁜 미소";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button10
             // 
@@ -325,6 +334,7 @@
             this.button10.TabIndex = 24;
             this.button10.Text = "센스있는";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button11
             // 
@@ -338,6 +348,7 @@
             this.button11.TabIndex = 22;
             this.button11.Text = "목소리";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button12
             // 
@@ -351,6 +362,7 @@
             this.button12.TabIndex = 23;
             this.button12.Text = "자신있는 몸매";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button13
             // 
@@ -364,6 +376,7 @@
             this.button13.TabIndex = 7;
             this.button13.Text = "옷을 잘 입는";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button14
             // 
@@ -377,6 +390,7 @@
             this.button14.TabIndex = 20;
             this.button14.Text = "눈웃음";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button15
             // 
@@ -390,6 +404,7 @@
             this.button15.TabIndex = 18;
             this.button15.Text = "배울점이 많은";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.Btn_Click);
             // 
             // button16
             // 
@@ -403,6 +418,7 @@
             this.button16.TabIndex = 19;
             this.button16.Text = "유머러스한";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.Btn_Click);
             // 
             // label5
             // 
@@ -410,7 +426,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Location = new System.Drawing.Point(12, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 26);
             this.label5.TabIndex = 26;
@@ -426,7 +442,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbSex);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.departmentList);
@@ -439,6 +455,7 @@
             this.Name = "FirstSettingForm";
             this.Text = "FirstSettingForm";
             this.Load += new System.EventHandler(this.FirstSettingForm_Load);
+            this.Click += new System.EventHandler(this.Btn_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -457,7 +474,7 @@
         private System.Windows.Forms.ComboBox departmentList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbSex;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
