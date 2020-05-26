@@ -18,6 +18,10 @@ namespace KW_Project
     public partial class ProfilePhoto : Form
     {
         private string currentUserId;
+        private string currentUserGender;
+
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+
         public ProfilePhoto(string id)
         {
             currentUserId = id;
@@ -61,14 +65,27 @@ namespace KW_Project
         private void btnSavetoDB_Click(object sender, EventArgs e)
         {
             string insertQuery;
+            string readQuery;
             UInt32 fileSize;
             byte[] data;
             FileStream fs;
-
-            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=8983");
             MySqlCommand command = new MySqlCommand();
 
-            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@fileName,@fileSize,@file)"; 
+            // profile table에 성별 등록
+            readQuery = "SELECT * FROM user_data WHERE id=" + currentUserId;
+
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand(readQuery, connection);
+            MySqlDataReader table = cmd.ExecuteReader();
+            table.Read();
+            currentUserGender = table["gender"].ToString();
+            table.Close();
+
+            connection.Close();
+
+            // 이상형 등록
+            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@gender,@fileName,@fileSize,@file)"; 
 
             try
             {
@@ -83,6 +100,7 @@ namespace KW_Project
 
                 command.Connection = connection;
                 command.CommandText = insertQuery;
+                command.Parameters.AddWithValue("@gender", currentUserGender);
                 command.Parameters.AddWithValue("@fileName", filePath);
                 command.Parameters.AddWithValue("@fileSize", fileSize);
                 command.Parameters.AddWithValue("@file", data);
