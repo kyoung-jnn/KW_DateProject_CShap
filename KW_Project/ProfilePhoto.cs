@@ -84,7 +84,7 @@ namespace KW_Project
 
             connection.Close();
 
-            // 이상형 등록
+            // 사진 등록
             insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@gender,@fileName,@fileSize,@file)"; 
 
             try
@@ -110,10 +110,13 @@ namespace KW_Project
                 MessageBox.Show("전송 성공"); //지워야함
 
                 connection.Close();
+
+
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                connection.Close();
             }
         }
 
