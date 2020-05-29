@@ -23,7 +23,11 @@ namespace KW_Project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtPwd.Text))
+=======
+            if(string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtPwd.Text))
+>>>>>>> dev_Menu
             {
                 MessageBox.Show("입력 정보를 확인하세요!");
                 return;
@@ -43,9 +47,15 @@ namespace KW_Project
                     if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
                     {
                         this.Visible = false; // 로그인 창 닫아놓기
+<<<<<<< HEAD
                         // 여기서 메뉴창 열기
                         FirstSettingForm settingform = new FirstSettingForm(txtId.Text);
                         DialogResult result = settingform.ShowDialog();
+=======
+                        MainMenu mM = new MainMenu();
+                        DialogResult result = mM.ShowDialog();
+                        
+>>>>>>> dev_Menu
 
                         if (result == DialogResult.Cancel)
                         {
@@ -80,11 +90,16 @@ namespace KW_Project
             {
                 this.Visible = true;
             }
+<<<<<<< HEAD
             else if (result == DialogResult.No) // form을 아예 종료
             {   
                 this.Close();
             }
         }
+=======
+        }
+
+>>>>>>> dev_Menu
         
     }
 }

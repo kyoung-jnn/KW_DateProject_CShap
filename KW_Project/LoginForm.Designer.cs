@@ -50,7 +50,10 @@
             // 
             this.txtPwd.Location = new System.Drawing.Point(308, 194);
             this.txtPwd.Name = "txtPwd";
+<<<<<<< HEAD
             this.txtPwd.PasswordChar = '*';
+=======
+>>>>>>> dev_Menu
             this.txtPwd.Size = new System.Drawing.Size(193, 25);
             this.txtPwd.TabIndex = 2;
             // 
@@ -78,15 +81,22 @@
             // 
             // btnLogin
             // 
+<<<<<<< HEAD
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+=======
+>>>>>>> dev_Menu
             this.btnLogin.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLogin.Location = new System.Drawing.Point(313, 252);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(87, 40);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "로그인";
+<<<<<<< HEAD
             this.btnLogin.UseVisualStyleBackColor = false;
+=======
+            this.btnLogin.UseVisualStyleBackColor = true;
+>>>>>>> dev_Menu
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label3
@@ -102,23 +112,37 @@
             // 
             // btnRegister
             // 
+<<<<<<< HEAD
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+=======
+>>>>>>> dev_Menu
             this.btnRegister.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRegister.Location = new System.Drawing.Point(408, 252);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(87, 40);
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "회원가입";
+<<<<<<< HEAD
             this.btnRegister.UseVisualStyleBackColor = false;
+=======
+            this.btnRegister.UseVisualStyleBackColor = true;
+>>>>>>> dev_Menu
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // pictureBox1
             // 
+<<<<<<< HEAD
             this.pictureBox1.Image = global::KW_Project.Properties.Resources.first;
             this.pictureBox1.Location = new System.Drawing.Point(40, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 207);
+=======
+            this.pictureBox1.Image = global::KW_Project.Properties.Resources.heart2;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 79);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(233, 240);
+>>>>>>> dev_Menu
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
