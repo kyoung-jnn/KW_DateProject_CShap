@@ -57,3 +57,5 @@ C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Proje
 C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.exe
 C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.pdb
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.LoadingForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.MainMenuForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.ProfileEditForm.resources

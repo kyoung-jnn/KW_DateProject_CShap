@@ -41,18 +41,18 @@ namespace KW_Project
                                                      , int nWidthEllipse
                                                      , int nHeightEllipse);
 
-        public string filePath;
-
+        public string filePath = null; // 받아온 파일 경로
         private void btnOpen_Click(object sender, EventArgs e)
         {
             try
             {
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                
+           
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     filePath = openFileDialog1.FileName;
                     profilePic.Image = Image.FromFile(openFileDialog1.FileName);
+                    profilePic.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
             catch (Exception ex)
@@ -76,6 +76,7 @@ namespace KW_Project
 
             connection.Open();
 
+            // 성별 읽어오기
             MySqlCommand cmd = new MySqlCommand(readQuery, connection);
             MySqlDataReader table = cmd.ExecuteReader();
             table.Read();
@@ -84,8 +85,10 @@ namespace KW_Project
 
             connection.Close();
 
+            //
+
             // 사진 등록
-            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@gender,@fileName,@fileSize,@file)"; 
+            insertQuery = "INSERT INTO profile_photo_data VALUES(" + currentUserId + " , "+"@gender,@fileSize,@file)"; 
 
             try
             {
@@ -93,7 +96,7 @@ namespace KW_Project
                 fileSize = (UInt32)fs.Length;
 
                 data = new byte[fileSize];
-                fs.Read(data, 0, (int)fileSize);
+                fs.Read(data, 0, (int)fileSize); // 사진 데이터 스트림으로 받기
                 fs.Close();
 
                 connection.Open(); // mysql 연결
@@ -101,17 +104,27 @@ namespace KW_Project
                 command.Connection = connection;
                 command.CommandText = insertQuery;
                 command.Parameters.AddWithValue("@gender", currentUserGender);
-                command.Parameters.AddWithValue("@fileName", filePath);
-                command.Parameters.AddWithValue("@fileSize", fileSize);
                 command.Parameters.AddWithValue("@file", data);
+                command.Parameters.AddWithValue("@fileSize", fileSize);
 
-                command.ExecuteNonQuery();
+                try
+                {
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("저장 완료!");
+                        connection.Close();
+                    }
 
-                MessageBox.Show("전송 성공"); //지워야함
-
+                    else
+                    {
+                        MessageBox.Show("비정상 전송");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 connection.Close();
-
-
             }
             catch(Exception ex)
             {
@@ -120,62 +133,19 @@ namespace KW_Project
             }
         }
 
-        // mysql에서 사진 불러오기
-        /*private void btnLoadfromWin_Click(object sender, EventArgs e)
-        {
-            string fileName;
-            string insertQuery;
-            UInt32 fileSize;
-            byte[] data;
-            FileStream fs;
-
-            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=8983");
-            MySqlCommand command = new MySqlCommand();
-
-            insertQuery = "SELECT * from profile_photo_data";
-
-            try
-            {
-                connection.Open();
-
-                command.Connection = connection;
-                command.CommandText = insertQuery;
-
-                MySqlDataReader myData = command.ExecuteReader();
-
-                *//*if (!myData.HasRows)
-                    throw new Exception("Blob 데이터가 존재하지 않습니다.");*//*
-
-                myData.Read();
-
-                fileSize = myData.GetUInt32(myData.GetOrdinal("filesize"));
-                data = new byte[fileSize];
-
-                myData.GetBytes(myData.GetOrdinal("file"), 0, data, 0, (int)fileSize);
-
-                fileName = @System.IO.Directory.GetCurrentDirectory() + "\\newfile.png";
-
-                fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
-                fs.Write(data, 0, (int)fileSize);
-                fs.Close();
-
-                //profilePic2.Image = Image.FromFile(fileName);
-
-                myData.Close();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-
-            }
-        }*/
-
-        
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            // 메인 메뉴 띄우기 테스트
+            MainMenuForm mainform = new MainMenuForm(currentUserId,currentUserGender);
+            mainform.Show();
+            this.Close();
+            this.DialogResult = DialogResult.No; // form 을 아예 종료
         }
     }
 }

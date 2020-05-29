@@ -65,6 +65,18 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileEditForm.Designer.cs">
+      <DependentUpon>ProfileEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePhoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,9 +90,6 @@
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RoundButton.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SecondSetting.cs">
       <SubType>Form</SubType>
@@ -96,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileEditForm.resx">
+      <DependentUpon>ProfileEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfilePhoto.resx">
       <DependentUpon>ProfilePhoto.cs</DependentUpon>

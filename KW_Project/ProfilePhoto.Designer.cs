@@ -94,19 +94,20 @@
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNext.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNext.Location = new System.Drawing.Point(228, 617);
+            this.btnNext.Location = new System.Drawing.Point(229, 614);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 36);
             this.btnNext.TabIndex = 18;
             this.btnNext.Text = "다음";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnBack.Location = new System.Drawing.Point(129, 617);
+            this.btnBack.Location = new System.Drawing.Point(130, 614);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(84, 36);
             this.btnBack.TabIndex = 17;

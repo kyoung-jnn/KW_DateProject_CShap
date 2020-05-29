@@ -122,6 +122,10 @@ namespace KW_Project
             if (result == DialogResult.Cancel)
             {
                 this.Visible = true;
+            }else if(result == DialogResult.No)
+            {
+                this.Close();
+                this.DialogResult = DialogResult.No;
             }
         }
 
