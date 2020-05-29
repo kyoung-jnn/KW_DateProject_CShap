@@ -83,7 +83,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(82, 27);
+            this.label4.Location = new System.Drawing.Point(87, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(278, 21);
             this.label4.TabIndex = 16;

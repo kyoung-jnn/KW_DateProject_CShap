@@ -19,12 +19,20 @@ namespace KW_Project
         public loginForm()
         {
             InitializeComponent();
-        }
+            timeBeginPeriod(timerAccuracy);
 
+        }
+        private const int timerAccuracy = 10;
+        [System.Runtime.InteropServices.DllImport("winmm.dll")]
+        private static extern int timeBeginPeriod(int msec);
+        [System.Runtime.InteropServices.DllImport("winmm.dll")]
+        public static extern int timeEndPeriod(int msec);
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(txtId.Text) || string.IsNullOrEmpty(txtPwd.Text))
             {
+                LoadingForm loadingform = new LoadingForm();
+                DialogResult result = loadingform.ShowDialog();
                 MessageBox.Show("입력 정보를 확인하세요!");
                 return;
             }
