@@ -129,6 +129,11 @@ namespace KW_Project
             {
                 this.Visible = true;
             }
+            else if (result == DialogResult.No)
+            {
+                this.Close();
+                this.DialogResult = DialogResult.No;
+            }
         }
         private bool IsAttractSelected(Button[] btns1, Button[] btns2)        //성격, 매력 버튼이 각각 3개 선택되었는지 체크
         {
