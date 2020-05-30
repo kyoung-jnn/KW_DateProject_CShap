@@ -43,10 +43,7 @@
             // 
             // btnBack
             // 
-<<<<<<< HEAD
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-=======
->>>>>>> dev_Menu
             this.btnBack.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBack.Location = new System.Drawing.Point(404, 279);
             this.btnBack.Name = "btnBack";
@@ -58,10 +55,7 @@
             // 
             // btnRegisterConfirm
             // 
-<<<<<<< HEAD
             this.btnRegisterConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-=======
->>>>>>> dev_Menu
             this.btnRegisterConfirm.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRegisterConfirm.Location = new System.Drawing.Point(311, 279);
             this.btnRegisterConfirm.Name = "btnRegisterConfirm";

@@ -83,6 +83,7 @@
             this.Controls.Add(this.btnHome);
             this.Name = "MainMenuForm";
             this.Text = "MainMenuForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenuForm_FormClosed);
             this.ResumeLayout(false);
 
         }

@@ -10,8 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
-
 using MySql.Data.MySqlClient; // Mysql 사용
+using System.Threading;
 
 namespace KW_Project
 {
@@ -94,9 +94,9 @@ namespace KW_Project
             {
                 fs = new FileStream(filePath, FileMode.Open, FileAccess.Read); // 해당 filePath에 stream 열기
                 fileSize = (UInt32)fs.Length;
-
                 data = new byte[fileSize];
                 fs.Read(data, 0, (int)fileSize); // 사진 데이터 스트림으로 받기
+
                 fs.Close();
 
                 connection.Open(); // mysql 연결
@@ -112,9 +112,7 @@ namespace KW_Project
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("저장 완료!");
-                        connection.Close();
                     }
-
                     else
                     {
                         MessageBox.Show("비정상 전송");
@@ -124,6 +122,7 @@ namespace KW_Project
                 {
                     MessageBox.Show(ex.Message);
                 }
+
                 connection.Close();
             }
             catch(Exception ex)
@@ -141,11 +140,22 @@ namespace KW_Project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            // 메인 메뉴 띄우기 테스트
-            MainMenuForm mainform = new MainMenuForm(currentUserId,currentUserGender);
-            mainform.Show();
+            this.Visible = false;
             this.Close();
             this.DialogResult = DialogResult.No; // form 을 아예 종료
+
+            // 로딩 창
+            LoadingForm loadingform = new LoadingForm();
+            DialogResult result = loadingform.ShowDialog();
+
+            if(result == DialogResult.Cancel)
+            {
+                // 메인 메뉴 띄우기 테스트
+                MainMenuForm mainform = new MainMenuForm(currentUserId, currentUserGender);
+                mainform.Show();
+            }
+      
+   
         }
     }
 }

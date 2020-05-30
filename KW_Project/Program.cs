@@ -18,8 +18,8 @@ namespace KW_Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginForm());
             // 메인 메뉴 창 메모리에 올려두기
-            MainMenuForm main = new MainMenuForm("empty","empty");
-            Application.Run(main);
+         /*   MainMenuForm main = new MainMenuForm("empty","empty");
+            Application.Run(main);*/
         }
     }
 }

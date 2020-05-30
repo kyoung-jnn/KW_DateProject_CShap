@@ -34,8 +34,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::KW_Project.Properties.Resources.ezgif_com_optimize;
-            this.pictureBox1.Location = new System.Drawing.Point(82, 55);
+            this.pictureBox1.Image = global::KW_Project.Properties.Resources.loadingHeart1;
+            this.pictureBox1.Location = new System.Drawing.Point(67, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(267, 263);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -47,7 +47,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(434, 380);
+            this.ClientSize = new System.Drawing.Size(404, 380);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoadingForm";

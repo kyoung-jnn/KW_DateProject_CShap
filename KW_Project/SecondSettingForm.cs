@@ -13,12 +13,12 @@ using MySql.Data.MySqlClient;
 
 namespace KW_Project
 {
-    public partial class SecondSetting : Form
+    public partial class SecondSettingForm : Form
     {
         private string currentUserId;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
-        public SecondSetting(string id)
+        public SecondSettingForm(string id)
         {
             currentUserId = id;
             InitializeComponent();
@@ -114,7 +114,7 @@ namespace KW_Project
             }
 
             connection.Close();
-            this.Visible = false; // 첫번째 세팅창 받기
+            this.Visible = false; // 두번째 세팅창 받기
 
             ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId);
             DialogResult result = ProfilePhotoform.ShowDialog();

@@ -118,11 +118,8 @@ namespace KW_Project
         // mysql에서 프로필 사진 불러오기
         private void loadProfilePhoto()
         {
-            string fileName;
             string insertQuery;
-            UInt32 fileSize;
-            byte[] data;
-            FileStream fs;
+            byte[] Image = null;
 
             MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
             MySqlCommand command = new MySqlCommand();
@@ -131,35 +128,21 @@ namespace KW_Project
 
             try
             {
-                /* connection.Open();
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = insertQuery;
+                command.Parameters.AddWithValue("@id", currentUserId);
 
-                 command.Connection = connection;
-                 command.CommandText = insertQuery;
-                 command.Parameters.AddWithValue("@id", currentUserId);
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    Image = (byte[])reader[0];
+                    profilePic.Image = new Bitmap(new MemoryStream(Image));
+                }
 
-                 MySqlDataReader myData = command.ExecuteReader();
+                reader.Close();
+                connection.Close();
 
-                 if (!myData.HasRows)
-                     throw new Exception("Blob 데이터가 존재하지 않습니다.");
-
-                 myData.Read();
-
-                 fileSize = myData.GetUInt32(myData.GetOrdinal("filesize"));
-                 data = new byte[fileSize];
-
-                 myData.GetBytes(myData.GetOrdinal("file"), 0, data, 0, (int)fileSize);
-
-               *//*  fileName = @System.IO.Directory.GetCurrentDirectory() + "\\newfile.png";
-
-                 fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
-                 fs.Write(data, 0, (int)fileSize);
-                 fs.Close();*//*
-
-                 profilePic.Image = Image.FromFile(fileName);
-
-                 myData.Close();
-                 connection.Close();*/
-               
             }
             catch (Exception ex)
             {

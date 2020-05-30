@@ -1,6 +1,6 @@
 ﻿namespace KW_Project
 {
-    partial class SecondSetting
+    partial class SecondSettingForm
     {
         /// <summary>
         /// Required designer variable.

@@ -91,11 +91,11 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecondSetting.cs">
+    <Compile Include="SecondSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SecondSetting.Designer.cs">
-      <DependentUpon>SecondSetting.cs</DependentUpon>
+    <Compile Include="SecondSettingForm.Designer.cs">
+      <DependentUpon>SecondSettingForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
@@ -128,8 +128,8 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SecondSetting.resx">
-      <DependentUpon>SecondSetting.cs</DependentUpon>
+    <EmbeddedResource Include="SecondSettingForm.resx">
+      <DependentUpon>SecondSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\first.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\loadingHeart.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

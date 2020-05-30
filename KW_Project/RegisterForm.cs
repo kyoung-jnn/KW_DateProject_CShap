@@ -22,6 +22,7 @@ namespace KW_Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Close();
             this.DialogResult = DialogResult.Cancel;
         }
 

@@ -28,5 +28,10 @@ namespace KW_Project
             ProfileEditForm profileeditform = new ProfileEditForm(currentUserId, currentUserGender);
             profileeditform.ShowDialog();
         }
+
+        private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
