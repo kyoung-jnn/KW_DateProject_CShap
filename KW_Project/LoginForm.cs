@@ -44,19 +44,39 @@ namespace KW_Project
                     if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
                     {
                         this.Visible = false; // 로그인 창 닫아놓기
+                        string userFlag = table["userFlag"].ToString();
 
-                        // 여기서 메뉴창 열기
-                        FirstSettingForm settingform = new FirstSettingForm(txtId.Text);
-                        DialogResult result = settingform.ShowDialog();
+                        // 기존 회원
+                        if (userFlag == "1") 
+                        {
+                            // 로딩 창
+                            LoadingForm loadingform = new LoadingForm();
+                            DialogResult result = loadingform.ShowDialog();
 
-                        if (result == DialogResult.Cancel)
-                        {
-                            this.Visible = true;
-                        }else if(result == DialogResult.No)
-                        {
-                            //this.Close();          
-                           
+                            if (result == DialogResult.Cancel)
+                            {
+                                MainMenuForm mainform = new MainMenuForm(table["id"].ToString(), table["gender"].ToString()); 
+                                mainform.Show();
+                            }
                         }
+                        // 신규 회원
+                        else
+                        {
+                            FirstSettingForm settingform = new FirstSettingForm(txtId.Text);
+                            DialogResult result = settingform.ShowDialog();
+
+                            if (result == DialogResult.Cancel)
+                            {
+                                this.Visible = true;
+                            }
+                            else if (result == DialogResult.No)
+                            {
+                                //this.Close();          
+
+                            }
+                        }
+                
+                  
                     }
                 }
                 else // database에 정보가 없음

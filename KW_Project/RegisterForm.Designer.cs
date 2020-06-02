@@ -89,6 +89,7 @@
             // 
             this.R_txtPwd1.Location = new System.Drawing.Point(307, 173);
             this.R_txtPwd1.Name = "R_txtPwd1";
+            this.R_txtPwd1.PasswordChar = '*';
             this.R_txtPwd1.Size = new System.Drawing.Size(193, 25);
             this.R_txtPwd1.TabIndex = 10;
             // 
@@ -133,6 +134,7 @@
             // 
             this.R_txtPwd2.Location = new System.Drawing.Point(307, 239);
             this.R_txtPwd2.Name = "R_txtPwd2";
+            this.R_txtPwd2.PasswordChar = '*';
             this.R_txtPwd2.Size = new System.Drawing.Size(193, 25);
             this.R_txtPwd2.TabIndex = 17;
             // 

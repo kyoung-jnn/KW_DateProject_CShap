@@ -42,7 +42,7 @@ namespace KW_Project
 
         private void loadingThread()
         {
-            Thread.Sleep(6000);
+            Thread.Sleep(5700);
             this.DialogResult = DialogResult.Cancel;
             formClose();
           //  this.Invoke(new TestDelegate_Close(formClose));

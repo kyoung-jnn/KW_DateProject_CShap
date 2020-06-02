@@ -90,7 +90,7 @@ namespace KW_Project
             // 이름, 성별, 학과, 본인어필, 이상형 전송
             string idealList = SelectedAttraction(idealList1) + SelectedAttraction(idealList2);
 
-            string insertQuery = "UPDATE user_data SET ideal=@idealList WHERE id=@curID;";
+            string insertQuery = "UPDATE user_data SET ideal=@idealList, userFlag='1' WHERE id=@curID;";
 
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
