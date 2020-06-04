@@ -40,6 +40,12 @@ namespace KW_Project
                 R_txtPwd1.Focus();
                 return;
             }
+            else if (cmbSex.SelectedItem == null)
+            {
+                MessageBox.Show("성별을 선택하세요!");
+                cmbSex.Focus();
+                return;
+            }
 
             if(R_txtPwd1.Text != R_txtPwd2.Text)
             {
@@ -52,8 +58,14 @@ namespace KW_Project
                 MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
 
                 // 학번, 비밀번호 전송
-                string insertQuery = "INSERT INTO user_data(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";   
+                
+                string insertQuery = "";   
+                if(cmbSex.SelectedIndex == 0)
+                    insertQuery = "INSERT INTO user_data_m(id,pwd,gender) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + "," + cmbSex.Text + ")";
+                else
+                    insertQuery = "INSERT INTO user_data_f(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";
 
+                MessageBox.Show(insertQuery); //test
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(insertQuery, connection);
                 try

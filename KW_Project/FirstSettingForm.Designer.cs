@@ -37,7 +37,6 @@
             this.departmentList = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -169,19 +169,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(110, 21);
             this.txtName.TabIndex = 16;
-            // 
-            // cmbSex
-            // 
-            this.cmbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Items.AddRange(new object[] {
-            "남자",
-            "여자"});
-            this.cmbSex.Location = new System.Drawing.Point(221, 85);
-            this.cmbSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(65, 20);
-            this.cmbSex.TabIndex = 17;
             // 
             // button2
             // 
@@ -442,6 +429,20 @@
             this.label5.Text = "자신의 프로필";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbSex
+            // 
+            this.cmbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmbSex.Enabled = false;
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
+            "남자",
+            "여자"});
+            this.cmbSex.Location = new System.Drawing.Point(221, 85);
+            this.cmbSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(65, 20);
+            this.cmbSex.TabIndex = 17;
+            // 
             // FirstSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -483,7 +484,6 @@
         private System.Windows.Forms.ComboBox departmentList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ComboBox cmbSex;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -502,5 +502,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbSex;
     }
 }
