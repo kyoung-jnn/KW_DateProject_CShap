@@ -55,13 +55,12 @@ namespace KW_Project
             }
             else
             {
-                MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
-
                 // 학번, 비밀번호 전송
+            
+                string insertQuery = ""; 
                 
-                string insertQuery = "";   
-                if(cmbSex.SelectedIndex == 0)
-                    insertQuery = "INSERT INTO user_data_m(id,pwd,gender) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + "," + cmbSex.Text + ")";
+                if(cmbSex.SelectedText == "남자")
+                    insertQuery = "INSERT INTO user_data_m(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";
                 else
                     insertQuery = "INSERT INTO user_data_f(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";
 
