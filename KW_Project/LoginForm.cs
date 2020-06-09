@@ -69,6 +69,7 @@ namespace KW_Project
                 MessageBox.Show("DataBase 읽기 실패");
                 MessageBox.Show(E.ToString());
             }
+
             try
             {
                 connection.Open();
