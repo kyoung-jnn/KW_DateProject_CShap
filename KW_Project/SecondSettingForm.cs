@@ -16,11 +16,13 @@ namespace KW_Project
     public partial class SecondSettingForm : Form
     {
         private string currentUserId;
+        private int genderFlag;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
-        public SecondSettingForm(string id)
+        public SecondSettingForm(string id, int gender)
         {
             currentUserId = id;
+            genderFlag = gender;
             InitializeComponent();
             SetBtnEvent();
 
@@ -90,7 +92,11 @@ namespace KW_Project
             // 이름, 성별, 학과, 본인어필, 이상형 전송
             string idealList = SelectedAttraction(idealList1) + SelectedAttraction(idealList2);
 
-            string insertQuery = "UPDATE user_data SET ideal=@idealList, userFlag='1' WHERE id=@curID;";
+            string insertQuery = "";
+            if(genderFlag == 0)
+                insertQuery = "UPDATE user_data_m SET ideal=@idealList, userFlag='1' WHERE id=@curID;";
+            else if(genderFlag == 1)
+                insertQuery = "UPDATE user_data_f SET ideal=@idealList, userFlag='1' WHERE id=@curID;";
 
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -116,7 +122,7 @@ namespace KW_Project
             connection.Close();
             this.Visible = false; // 두번째 세팅창 받기
 
-            ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId);
+            ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId, genderFlag);
             DialogResult result = ProfilePhotoform.ShowDialog();
 
             if (result == DialogResult.Cancel)
