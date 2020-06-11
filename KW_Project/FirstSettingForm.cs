@@ -96,9 +96,9 @@ namespace KW_Project
             string attList = SelectedAttraction(attList1) + SelectedAttraction(attList2);
             string insertQuery = null;
             if(genderFlag == 0)
-                insertQuery = "UPDATE user_data_m SET name=@name, gender=@gender, department=@department, attraction=@attList WHERE id=@curID;";
+                insertQuery = "UPDATE user_data_m SET name=@name, age=@age, gender=@gender, department=@department, attraction=@attList WHERE id=@curID;";
             else if(genderFlag == 1)
-                insertQuery = "UPDATE user_data_f SET name=@name, gender=@gender, department=@department, attraction=@attList WHERE id=@curID;";
+                insertQuery = "UPDATE user_data_f SET name=@name, age=@age, gender=@gender, department=@department, attraction=@attList WHERE id=@curID;";
 
             connection.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -106,6 +106,7 @@ namespace KW_Project
             {
                 command.Parameters.AddWithValue("@curID", currentUserId);
                 command.Parameters.AddWithValue("@name", txtName.Text);
+                command.Parameters.AddWithValue("@age", cmbAge.SelectedItem);
                 switch (genderFlag)
                 {
                     case 0:
