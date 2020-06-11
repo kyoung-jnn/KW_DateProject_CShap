@@ -40,7 +40,7 @@ namespace KW_Project
                 MySqlCommand cmd = new MySqlCommand(ReadQuery, connection);
                 MySqlDataReader table = cmd.ExecuteReader();
 
-                if (table.Read())
+                if (table.Read()) // 남자 데이터 먼저 읽기
                 {
                     if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
                     {
@@ -54,51 +54,39 @@ namespace KW_Project
                         else
                             newMember(0);
                     }
-
-                }
-                else // database에 정보가 없음
-                {
-                    MessageBox.Show("회원 정보가 없습니다.");
-                }
-
-                table.Close();
-                connection.Close();
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show("DataBase 읽기 실패");
-                MessageBox.Show(E.ToString());
-            }
-
-            try
-            {
-                connection.Open();
-                // 현재 입력한 학번으로 Mysql에서 가져옴
-
-                string ReadQuery = "SELECT * FROM user_data_f where id = " + txtId.Text;
-
-                MySqlCommand cmd = new MySqlCommand(ReadQuery, connection);
-                MySqlDataReader table = cmd.ExecuteReader();
-
-                if (table.Read())
-                {
-                    if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
+                    else
                     {
-                        this.Visible = false; // 로그인 창 닫아놓기
-                        string userFlag = table["userFlag"].ToString();
-
-                        // 기존 회원
-                        if (userFlag == "1")
-                            existMember(table);
-                        // 신규 회원
-                        else
-                            newMember(1);
+                        MessageBox.Show("입력 정보를 확인하세요!");
                     }
-
                 }
-                else // database에 정보가 없음
+                else 
                 {
-                    MessageBox.Show("회원 정보가 없습니다.");
+                    table.Close();
+
+                    ReadQuery = "SELECT * FROM user_data_f where id = " + txtId.Text;
+                    cmd = new MySqlCommand(ReadQuery, connection);
+                    table = cmd.ExecuteReader();
+
+                    if (table.Read()) // 여자 데이터 읽기
+                    {
+                        if (txtId.Text == table["id"].ToString() && txtPwd.Text == table["pwd"].ToString())
+                        {
+                            this.Visible = false; // 로그인 창 닫아놓기
+                            string userFlag = table["userFlag"].ToString();
+
+                            // 기존 회원
+                            if (userFlag == "1")
+                                existMember(table);
+                            // 신규 회원
+                            else
+                                newMember(0);
+                        }
+                        else
+                        {
+                            MessageBox.Show("입력 정보를 확인하세요!");
+                        }
+                    }
+                   
                 }
 
                 table.Close();

@@ -24,10 +24,15 @@ namespace KW_Project
             //btnHome.Enabled = false;
 
             InitializeComponent();
+            lblProfile1.Parent = idealPic;
+            lblProfile2.Parent = idealPic;
+
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
+            // 여기에 알고리즘 메소드 추가해야함
+
             string ideal_id = null;
             if (currentUserGender == "남자")
                 ideal_id = "201584001";
@@ -114,11 +119,13 @@ namespace KW_Project
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    lblIdealProfile1.Text = reader["department"].ToString();
-                    lblIdealProfile1.Text += " ";
-                    lblIdealProfile1.Text += reader["age"].ToString();
+                    lblProfile1.BackColor = System.Drawing.Color.Transparent;
+                    lblProfile1.Text = reader["department"].ToString();
+                    lblProfile1.Text += " ";
+                    lblProfile1.Text += reader["age"].ToString();
 
-                    lblIdealProfile2.Text = reader["name"].ToString();
+                    lblProfile2.BackColor = System.Drawing.Color.Transparent;
+                    lblProfile2.Text = reader["name"].ToString();
                 }
 
                 reader.Close();
