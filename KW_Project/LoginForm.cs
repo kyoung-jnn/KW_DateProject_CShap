@@ -58,7 +58,7 @@ namespace KW_Project
                 }
                 else // database에 정보가 없음
                 {
-                    //MessageBox.Show("회원 정보가 없습니다.");
+                    MessageBox.Show("회원 정보가 없습니다.");
                 }
 
                 table.Close();
@@ -69,6 +69,7 @@ namespace KW_Project
                 MessageBox.Show("DataBase 읽기 실패");
                 MessageBox.Show(E.ToString());
             }
+
             try
             {
                 connection.Open();
