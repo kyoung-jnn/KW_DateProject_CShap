@@ -20,7 +20,7 @@ namespace KW_Project
         TcpClient clientSocket = new TcpClient();
         NetworkStream stream = default(NetworkStream);
         string message = string.Empty;
-        private int PORT = 12345;
+        private int PORT = 7777;
         
         public ChatClientForm()
         {

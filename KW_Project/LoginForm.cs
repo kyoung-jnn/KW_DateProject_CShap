@@ -14,7 +14,7 @@ namespace KW_Project
 {
     public partial class loginForm : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
         public loginForm()
         {
@@ -34,7 +34,7 @@ namespace KW_Project
             {
                 connection.Open();
                 // 현재 입력한 학번으로 Mysql에서 가져옴
-                string ReadQuery = "SELECT * FROM user_data where id = " + txtId.Text; 
+                string ReadQuery = "SELECT * FROM user_data_m where id = " + txtId.Text; 
                 
                 MySqlCommand cmd = new MySqlCommand(ReadQuery, connection);
                 MySqlDataReader table = cmd.ExecuteReader();
