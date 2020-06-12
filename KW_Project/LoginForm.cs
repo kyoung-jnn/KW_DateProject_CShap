@@ -79,7 +79,7 @@ namespace KW_Project
                                 existMember(table);
                             // 신규 회원
                             else
-                                newMember(0);
+                                newMember(1);
                         }
                         else
                         {
@@ -129,9 +129,9 @@ namespace KW_Project
                 mainform.Show();
             }
         }
-        private void newMember(int genderFlag)    //신규 회원 로그인 함수
+        private void newMember(int genderFlag)    // 신규 회원 로그인 함수 // 0 이면 남자 1이면 여자
         {
-            FirstSettingForm settingform = new FirstSettingForm(txtId.Text, genderFlag);
+            FirstSettingForm settingform = new FirstSettingForm(txtId.Text, genderFlag, false);
             DialogResult result = settingform.ShowDialog();
 
             if (result == DialogResult.Cancel)
@@ -140,8 +140,7 @@ namespace KW_Project
             }
             else if (result == DialogResult.No)
             {
-                //this.Close();          
-
+                //this.Close();    
             }
         }
     }

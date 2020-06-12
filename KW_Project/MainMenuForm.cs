@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient; // Mysql 사용
 using System.IO;
 
@@ -31,6 +33,9 @@ namespace KW_Project
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
+            //테두리 둥글게
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
+
             // 여기에 알고리즘 메소드 추가해야함
 
             string ideal_id = null;
@@ -44,6 +49,14 @@ namespace KW_Project
             LoadIdealPhoto(ideal_id);
             LoadIdealProfile(ideal_id);
         }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect
+                                                      , int nTopRect
+                                                      , int nRightRect
+                                                      , int nBottomRect
+                                                      , int nWidthEllipse
+                                                      , int nHeightEllipse);
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -137,6 +150,11 @@ namespace KW_Project
                 MessageBox.Show(ex.ToString());
 
             }
+        }
+
+        private void MatchingAlgorithm()
+        {
+
         }
     }
 

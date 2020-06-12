@@ -133,7 +133,7 @@
             // 
             // idealPic
             // 
-            this.idealPic.Location = new System.Drawing.Point(65, 33);
+            this.idealPic.Location = new System.Drawing.Point(68, 33);
             this.idealPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idealPic.Name = "idealPic";
             this.idealPic.Size = new System.Drawing.Size(391, 398);
@@ -159,7 +159,7 @@
             this.lblProfile2.ForeColor = System.Drawing.Color.White;
             this.lblProfile2.Location = new System.Drawing.Point(6, 301);
             this.lblProfile2.Name = "lblProfile2";
-            this.lblProfile2.Size = new System.Drawing.Size(139, 35);
+            this.lblProfile2.Size = new System.Drawing.Size(136, 34);
             this.lblProfile2.TabIndex = 9;
             this.lblProfile2.Text = "label2";
             // 

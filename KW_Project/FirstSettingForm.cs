@@ -17,12 +17,14 @@ namespace KW_Project
     {
         private string currentUserId;
         private int genderFlag;
+        private bool connectFlag;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
-        public FirstSettingForm(string id, int gender)
+        public FirstSettingForm(string id, int gender, bool connectFlag)
         {
             currentUserId = id;
             genderFlag = gender;
+            this.connectFlag = connectFlag; // 메인에서 접근한 것인지 로딩창에서 접근한 것인지 확인하는 용도
             InitializeComponent();
             SetBtnEvent();
         }
@@ -134,21 +136,30 @@ namespace KW_Project
             }
 
             connection.Close();
-            this.Visible = false; // 첫번째 세팅창 받기
-
-            SecondSettingForm settingform = new SecondSettingForm(currentUserId, genderFlag);
-            DialogResult result = settingform.ShowDialog(); 
-
-            if (result == DialogResult.Cancel)
+            if(connectFlag == false)
             {
-                this.Visible = true;
+                this.Visible = false; // 첫번째 세팅창 닫기
+
+                SecondSettingForm settingform = new SecondSettingForm(currentUserId, genderFlag,false);
+                DialogResult result = settingform.ShowDialog();
+
+                if (result == DialogResult.Cancel)
+                {
+                    this.Visible = true;
+                }
+                else if (result == DialogResult.No)
+                {
+                    this.Close();
+                    this.DialogResult = DialogResult.No;
+                }
             }
-            else if (result == DialogResult.No)
+            else
             {
-                this.Close();
-                this.DialogResult = DialogResult.No;
+                this.DialogResult = DialogResult.Cancel;
             }
+           
         }
+
         private bool IsAttractSelected(Button[] btns1, Button[] btns2)        //성격, 매력 버튼이 각각 3개 선택되었는지 체크
         {
             Color selected = Color.PaleGreen;     //선택되었을때의 색깔
@@ -177,6 +188,7 @@ namespace KW_Project
                 return false;
             }
         }
+
         private string SelectedAttraction(Button[] btns)           // 선택된 버튼들 string으로 반환
         {
             string ret = null;
@@ -189,6 +201,7 @@ namespace KW_Project
             }
             return ret;
         }
+
         private void Btn_Click(object sender, EventArgs e)          //버튼들 공통 이벤트 처리
         {
             Color basic = Color.LightCoral;             //   -- 색 수정시 이부분 수정
