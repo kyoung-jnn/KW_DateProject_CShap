@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KW_Project
 {
-    public partial class Menu : Form
+    public partial class ChatServerForm : Form
     {
-        public Menu()
+        public ChatServerForm()
         {
             InitializeComponent();
         }
