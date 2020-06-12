@@ -17,12 +17,14 @@ namespace KW_Project
     {
         private string currentUserId;
         private int genderFlag;
+        private bool connectFlag;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
-        public SecondSettingForm(string id, int gender)
+        public SecondSettingForm(string id, int gender, bool connectFlag)
         {
             currentUserId = id;
             genderFlag = gender;
+            this.connectFlag = connectFlag;
             InitializeComponent();
             SetBtnEvent();
 
@@ -120,19 +122,29 @@ namespace KW_Project
             }
 
             connection.Close();
-            this.Visible = false; // 두번째 세팅창 받기
-
-            ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId, genderFlag);
-            DialogResult result = ProfilePhotoform.ShowDialog();
-
-            if (result == DialogResult.Cancel)
+            if(connectFlag == false)
             {
-                this.Visible = true;
-            }else if(result == DialogResult.No)
-            {
-                this.Close();
-                this.DialogResult = DialogResult.No;
+                this.Visible = false; // 두번째 세팅창 받기
+
+                ProfilePhoto ProfilePhotoform = new ProfilePhoto(currentUserId, genderFlag);
+                DialogResult result = ProfilePhotoform.ShowDialog();
+
+                if (result == DialogResult.Cancel)
+                {
+                    this.Visible = true;
+                }
+                else if (result == DialogResult.No)
+                {
+                    this.Close();
+                    this.DialogResult = DialogResult.No;
+                }
             }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+
+            }
+
         }
 
         private bool IsAttractSelected(Button[] btns1, Button[] btns2)        //성격, 매력 버튼이 각각 3개 선택되었는지 체크
