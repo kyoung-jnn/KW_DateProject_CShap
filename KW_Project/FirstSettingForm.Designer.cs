@@ -37,7 +37,6 @@
             this.departmentList = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbAge = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -141,9 +141,35 @@
             this.departmentList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.departmentList.FormattingEnabled = true;
             this.departmentList.Items.AddRange(new object[] {
+            "건축공학과",
+            "건축학과",
+            "경영학부",
+            "국어국문학과",
+            "국제통상학부",
+            "국제학부",
+            "동북아문화산업학부",
+            "로봇학부",
+            "미디어영상학부",
+            "법학부",
+            "산업심리학과",
+            "생활체육학과",
             "소프트웨어학부",
-            "컴퓨터공학부",
-            "정보융합학부"});
+            "수학과",
+            "영어영문학과",
+            "자산관리학과",
+            "전기공학과",
+            "전자공학과",
+            "전자바이오물리학과",
+            "전자융합공학과",
+            "전자재료공학과",
+            "전자통신공학과",
+            "정보융합학부",
+            "정보콘텐츠학과",
+            "컴퓨터정보공학부",
+            "행정학과",
+            "화학공학과",
+            "화학과",
+            "환경공학과"});
             this.departmentList.Location = new System.Drawing.Point(134, 160);
             this.departmentList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.departmentList.Name = "departmentList";
@@ -156,32 +182,19 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(90, 51);
+            this.label4.Location = new System.Drawing.Point(88, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 17);
             this.label4.TabIndex = 15;
-            this.label4.Text = "이름과 성별을 입력하세요";
+            this.label4.Text = "이름과 나이를 입력하세요";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(107, 84);
+            this.txtName.Location = new System.Drawing.Point(113, 86);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(110, 21);
             this.txtName.TabIndex = 16;
-            // 
-            // cmbSex
-            // 
-            this.cmbSex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Items.AddRange(new object[] {
-            "남자",
-            "여자"});
-            this.cmbSex.Location = new System.Drawing.Point(221, 85);
-            this.cmbSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(65, 20);
-            this.cmbSex.TabIndex = 17;
             // 
             // button2
             // 
@@ -442,16 +455,127 @@
             this.label5.Text = "자신의 프로필";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbAge
+            // 
+            this.cmbAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmbAge.FormattingEnabled = true;
+            this.cmbAge.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100"});
+            this.cmbAge.Location = new System.Drawing.Point(229, 86);
+            this.cmbAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAge.Name = "cmbAge";
+            this.cmbAge.Size = new System.Drawing.Size(59, 20);
+            this.cmbAge.TabIndex = 27;
+            // 
             // FirstSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(394, 552);
+            this.Controls.Add(this.cmbAge);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cmbSex);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.departmentList);
@@ -483,7 +607,6 @@
         private System.Windows.Forms.ComboBox departmentList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ComboBox cmbSex;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -502,5 +625,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbAge;
     }
 }

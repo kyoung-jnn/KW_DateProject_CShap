@@ -81,8 +81,11 @@ namespace KW_Project
             MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
 
             // 프로필 사진 업데이트
-            string insertQuery = "UPDATE profile_photo_data SET fileSize=@fileSize,file=@file WHERE id = @id";
-
+            string insertQuery = "";
+            if(currentUserGender == "남자")
+                insertQuery = "UPDATE profile_photo_data_m SET fileSize=@fileSize,file=@file WHERE id = @id";
+            else if (currentUserGender=="여자")
+                insertQuery = "UPDATE profile_photo_data_f SET fileSize=@fileSize,file=@file WHERE id = @id";
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
             command.Parameters.AddWithValue("@id", currentUserId);
             command.Parameters.Add("@file", MySqlDbType.Blob);
@@ -118,14 +121,16 @@ namespace KW_Project
         // mysql에서 프로필 사진 불러오기
         private void loadProfilePhoto()
         {
-            string insertQuery;
+            string insertQuery="";
             byte[] Image = null;
 
             MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
             MySqlCommand command = new MySqlCommand();
 
-            insertQuery = "SELECT file from profile_photo_data WHERE id=@id";
-
+            if (currentUserGender == "남자")
+                insertQuery = "SELECT file from profile_photo_data_m WHERE id=@id";
+            else if (currentUserGender == "여자")
+                insertQuery = "SELECT file from profile_photo_data_f WHERE id=@id";
             try
             {
                 connection.Open();
