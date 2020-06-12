@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KW_Project_Chat_Server;
 
 namespace KW_Project
 {
@@ -27,6 +28,13 @@ namespace KW_Project
         {
             ProfileEditForm profileeditform = new ProfileEditForm(currentUserId, currentUserGender);
             profileeditform.ShowDialog();
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            
+            ChatClientForm clientForm = new ChatClientForm();
+            clientForm.ShowDialog();
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)

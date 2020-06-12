@@ -53,6 +53,12 @@
     <Compile Include="FirstSettingForm.Designer.cs">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatClientForm.Designer.cs">
+      <DependentUpon>ChatClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="SecondSettingForm.Designer.cs">
       <DependentUpon>SecondSettingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChatClientForm.resx">
+      <DependentUpon>ChatClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\loadingHeart.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KW_Project_Chat_Server\KW_Project_Chat_Server.csproj">
+      <Project>{4863aff6-5892-416d-b8da-21576a513818}</Project>
+      <Name>KW_Project_Chat_Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
