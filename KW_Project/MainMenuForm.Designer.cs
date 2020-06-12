@@ -51,6 +51,7 @@
             this.btnChat.TabIndex = 1;
             this.btnChat.Text = "채팅";
             this.btnChat.UseVisualStyleBackColor = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnBoard
             // 

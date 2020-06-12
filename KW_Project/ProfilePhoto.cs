@@ -20,7 +20,7 @@ namespace KW_Project
         private string currentUserId;
         private string currentUserGender;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
 
         public ProfilePhoto(string id)
         {
