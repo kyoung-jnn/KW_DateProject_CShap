@@ -20,7 +20,7 @@ namespace KW_Project
         private int genderFlag;
         public string filepath = null;// 받아온 파일 경로
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
 
         public ProfileEditForm(string id,string gender)
         {

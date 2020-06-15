@@ -14,7 +14,7 @@ namespace KW_Project
 {
     public partial class loginForm : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
 
         public loginForm()
         {
