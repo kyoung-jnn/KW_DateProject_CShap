@@ -18,6 +18,15 @@ namespace KW_Project
     {
         private string currentUserId;
         private string currentUserGender;
+        private const int CS_DROPSHADOW = 0x00020000;
+        
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect
+                                                    , int nTopRect
+                                                    , int nRightRect
+                                                    , int nBottomRect
+                                                    , int nWidthEllipse
+                                                    , int nHeightEllipse);
 
         public MainMenuForm(string id,string gender)
         {
@@ -50,18 +59,14 @@ namespace KW_Project
             LoadIdealProfile(ideal_id);
         }
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(int nLeftRect
-                                                      , int nTopRect
-                                                      , int nRightRect
-                                                      , int nBottomRect
-                                                      , int nWidthEllipse
-                                                      , int nHeightEllipse);
-
-        private void btnProfile_Click(object sender, EventArgs e)
+        protected override CreateParams CreateParams
         {
-            ProfileEditForm profileeditform = new ProfileEditForm(currentUserId, currentUserGender);
-            profileeditform.ShowDialog();
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -73,6 +78,14 @@ namespace KW_Project
         {
             Application.Exit();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            ProfileEditForm profileeditform = new ProfileEditForm(currentUserId, currentUserGender);
+            profileeditform.ShowDialog();
+        }
+
+        
 
         // mysql에서 프로필 사진 불러오기
         private void LoadIdealPhoto(string ideal_id)
@@ -151,6 +164,20 @@ namespace KW_Project
 
             }
         }
+
+
+        private void btnBoard_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            BoardForm boardForm = new BoardForm(currentUserId,currentUserGender);
+            DialogResult result = boardForm.ShowDialog();
+
+            if(result == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
+        }
+
 
         private void MatchingAlgorithm()
         {

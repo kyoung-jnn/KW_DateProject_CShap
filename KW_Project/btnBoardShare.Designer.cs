@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,22 +48,26 @@
             // 
             // btnMainshare
             // 
-            this.btnMainshare.Location = new System.Drawing.Point(35, 316);
+            this.btnMainshare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.btnMainshare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMainshare.Location = new System.Drawing.Point(313, 319);
             this.btnMainshare.Name = "btnMainshare";
-            this.btnMainshare.Size = new System.Drawing.Size(87, 23);
+            this.btnMainshare.Size = new System.Drawing.Size(87, 42);
             this.btnMainshare.TabIndex = 1;
             this.btnMainshare.Text = "업로드";
-            this.btnMainshare.UseVisualStyleBackColor = true;
+            this.btnMainshare.UseVisualStyleBackColor = false;
             this.btnMainshare.Click += new System.EventHandler(this.BtnMainshare_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(288, 316);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(158, 319);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 23);
+            this.button2.Size = new System.Drawing.Size(130, 42);
             this.button2.TabIndex = 2;
             this.button2.Text = "사진 불러오기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
@@ -80,12 +83,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(343, 369);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(56, 319);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 42);
             this.button1.TabIndex = 4;
             this.button1.Text = "뒤로가기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label2
@@ -99,29 +104,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "나의 최근 일상 사진";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(424, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 31);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "X";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
             // btnBoardShare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::KW_Project.Properties.Resources.하트파티_배경;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(455, 404);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -131,6 +119,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "btnBoardShare";
             this.Text = "당신의 일상을 공유하세요";
+            this.Load += new System.EventHandler(this.btnBoardShare_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,6 +134,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
     }
 }

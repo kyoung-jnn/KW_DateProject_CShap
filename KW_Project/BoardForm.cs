@@ -15,13 +15,14 @@ using System.IO;
 
 namespace KW_Project
 {
-    public partial class Board : Form
+    public partial class BoardForm : Form
     {
         private string currentUserId;
         private string currentUserGender;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        private const int CS_DROPSHADOW = 0x00020000;
 
-        public Board(string id,string gender)
+        public BoardForm(string id,string gender)
         {
             currentUserId = id;
             currentUserGender = gender;
@@ -31,7 +32,31 @@ namespace KW_Project
             loadAllUsers();
 
         }
-  
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect
+                                                    , int nTopRect
+                                                    , int nRightRect
+                                                    , int nBottomRect
+                                                    , int nWidthEllipse
+                                                    , int nHeightEllipse);
+
+        private void BoardForm_Load(object sender, EventArgs e)
+        {
+            //테두리 둥글게
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
         private void loadAllUsers()
         {
             string insertQuery = "";
@@ -218,6 +243,7 @@ namespace KW_Project
                     pictureBox9.Image = new Bitmap(new MemoryStream(Image));
                 }
                 reader9.Close();
+
                 connection.Close();
             }
             catch (Exception ex){ MessageBox.Show("게시판 점검중!!"); }
@@ -231,9 +257,10 @@ namespace KW_Project
             bbs.ShowDialog();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+
         }
     }
 }

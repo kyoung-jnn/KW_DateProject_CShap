@@ -144,7 +144,7 @@
             this.btnBoard.Size = new System.Drawing.Size(115, 72);
             this.btnBoard.TabIndex = 2;
             this.btnBoard.UseVisualStyleBackColor = false;
-            this.btnBoard.Click += new System.EventHandler(this.BtnBoard_Click);
+            this.btnBoard.Click += new System.EventHandler(this.btnBoard_Click);
             // 
             // btnChat
             // 
