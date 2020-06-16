@@ -71,6 +71,12 @@
     <Compile Include="FirstSettingForm.Designer.cs">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IdealList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdealList.Designer.cs">
+      <DependentUpon>IdealList.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdealList.resx">
+      <DependentUpon>IdealList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>

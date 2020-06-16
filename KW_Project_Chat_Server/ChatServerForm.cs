@@ -20,7 +20,7 @@ namespace KW_Project_Chat_Server
         TcpClient clientSocket = null;
 
 
-        private int PORT = 12345;
+        private int PORT = 7777;
 
         //Random ran = new Random();
         //PORT = ran.Next(10000, 20000);
