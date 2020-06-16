@@ -11,7 +11,6 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Diagnostics;
 using System.Net;
-using KW_Project_Chat_Server;
 
 namespace KW_Project
 {

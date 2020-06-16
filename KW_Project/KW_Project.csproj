@@ -59,6 +59,12 @@
     <Compile Include="btnBoardShare.Designer.cs">
       <DependentUpon>btnBoardShare.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatClientForm.Designer.cs">
+      <DependentUpon>ChatClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FirstSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="btnBoardShare.resx">
       <DependentUpon>btnBoardShare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatClientForm.resx">
+      <DependentUpon>ChatClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>

@@ -164,6 +164,7 @@
             this.btnChat.Size = new System.Drawing.Size(115, 72);
             this.btnChat.TabIndex = 1;
             this.btnChat.UseVisualStyleBackColor = false;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnHome
             // 

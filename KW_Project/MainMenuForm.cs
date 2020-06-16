@@ -183,6 +183,18 @@ namespace KW_Project
         {
 
         }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            //this.Visible = false;
+            ChatClientForm clientForm = new ChatClientForm();
+            DialogResult result = clientForm.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                this.Visible = true;
+            }
+        }
     }
 
 }
