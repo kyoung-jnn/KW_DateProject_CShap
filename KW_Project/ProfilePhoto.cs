@@ -150,7 +150,7 @@ namespace KW_Project
         {
             this.Visible = false;
             this.Close();
-            this.DialogResult = DialogResult.No; // form 을 아예 종료
+            this.DialogResult = DialogResult.No; // 로그인 창 전까지 폼 모두 종료
 
             // 로딩 창
             LoadingForm loadingform = new LoadingForm();
