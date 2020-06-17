@@ -19,6 +19,7 @@ namespace KW_Project
         private int genderFlag;
         private bool connectFlag;
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        private const int CS_DROPSHADOW = 0x00020000;
 
         public FirstSettingForm(string id, int gender, bool connectFlag)
         {
@@ -27,6 +28,15 @@ namespace KW_Project
             this.connectFlag = connectFlag; // 메인에서 접근한 것인지 로딩창에서 접근한 것인지 확인하는 용도
             InitializeComponent();
             SetBtnEvent();
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
         }
         private void SetBtnEvent()
         {
