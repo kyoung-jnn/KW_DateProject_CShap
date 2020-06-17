@@ -19,6 +19,7 @@ namespace KW_Project
         private string currentUserId;
         private string currentUserGender;
         private const int CS_DROPSHADOW = 0x00020000;
+        public string idealId = string.Empty;
         
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect
@@ -47,16 +48,15 @@ namespace KW_Project
 
             // 여기에 알고리즘 메소드 추가해야함
 
-            string ideal_id = null;
             if (currentUserGender == "남자")
-                ideal_id = "201584001";
+                idealId = "201584001";
             else if (currentUserGender == "여자")
-                ideal_id = "201619035";
+                idealId = "201619035";
 
-            //매칭 알고리즘 구현시 31~35줄 수정해서 ideal_id를 매칭된 사람으로 해주면 댈듯??
+            //매칭 알고리즘 구현시 31~35줄 수정해서 ideal_id를 매칭된 사람으로 해주면 댈듯?? -->6/16일 추가 : 전역변수로 idealId만들었으니 여기 할당해주면 댐
             //취소버튼 누르면 다시 다른사람 매칭해서 밑에 함수 두개 실행시켜주는식으로
-            LoadIdealPhoto(ideal_id);
-            LoadIdealProfile(ideal_id);
+            LoadIdealPhoto();
+            LoadIdealProfile();
         }
 
         protected override CreateParams CreateParams
@@ -88,7 +88,7 @@ namespace KW_Project
         
 
         // mysql에서 프로필 사진 불러오기
-        private void LoadIdealPhoto(string ideal_id)
+        private void LoadIdealPhoto()
         {
             string insertQuery = "";
             byte[] Image = null;
@@ -105,7 +105,7 @@ namespace KW_Project
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = insertQuery;
-                command.Parameters.AddWithValue("@id", ideal_id);
+                command.Parameters.AddWithValue("@id", idealId);
 
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -124,7 +124,7 @@ namespace KW_Project
 
             }
         }
-        private void LoadIdealProfile(string ideal_id)
+        private void LoadIdealProfile()
         {
             string insertQuery = "";
 
@@ -140,7 +140,7 @@ namespace KW_Project
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = insertQuery;
-                command.Parameters.AddWithValue("@id", ideal_id);
+                command.Parameters.AddWithValue("@id", idealId);
 
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
@@ -186,6 +186,7 @@ namespace KW_Project
 
         private void btnChat_Click(object sender, EventArgs e)
         {
+            /*
             //this.Visible = false;
             ChatClientForm clientForm = new ChatClientForm();
             DialogResult result = clientForm.ShowDialog();
@@ -194,6 +195,10 @@ namespace KW_Project
             {
                 this.Visible = true;
             }
+            */
+            IdealList idealList = new IdealList(currentUserId, currentUserGender, idealId);
+            idealList.ShowDialog();
+
         }
     }
 
