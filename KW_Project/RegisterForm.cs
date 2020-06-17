@@ -14,7 +14,7 @@ namespace KW_Project
 {
     public partial class RegisterForm : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
         public RegisterForm()
         {
             InitializeComponent();
@@ -28,16 +28,22 @@ namespace KW_Project
 
         private void btnRegisterConfirm_Click(object sender, EventArgs e)
         {
-            if(R_txtId.Text == "")
+            if (string.IsNullOrEmpty(R_txtId.Text))
             {
                 MessageBox.Show("학번을 입력하세요!");
                 R_txtId.Focus();
                 return;
             }
-            else if(R_txtPwd1.Text == "" || R_txtPwd2.Text == "")
+            else if(string.IsNullOrEmpty(R_txtPwd1.Text) || string.IsNullOrEmpty(R_txtPwd2.Text))
             {
                 MessageBox.Show("비밀번호를 입력하세요!");
                 R_txtPwd1.Focus();
+                return;
+            }
+            else if (cmbSex.SelectedItem == null)
+            {
+                MessageBox.Show("성별을 선택하세요!");
+                cmbSex.Focus();
                 return;
             }
 
@@ -49,10 +55,12 @@ namespace KW_Project
             }
             else
             {
-                MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
-
                 // 학번, 비밀번호 전송
-                string insertQuery = "INSERT INTO user_data(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";   
+                string insertQuery = "";
+                if(cmbSex.SelectedItem.ToString() == "남자")
+                    insertQuery = "INSERT INTO user_data_m(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";
+                else
+                    insertQuery = "INSERT INTO user_data_f(id,pwd) VALUES(" + R_txtId.Text + "," + R_txtPwd1.Text + ")";
 
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(insertQuery, connection);
@@ -60,7 +68,7 @@ namespace KW_Project
                 {
                     if(command.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("정상 전송");
+                        MessageBox.Show("회원이 되었습니다!");
                     }
                     else
                     {
@@ -73,7 +81,35 @@ namespace KW_Project
                 }
 
                 connection.Close();
+                SetIdealList();
+                this.DialogResult = DialogResult.Cancel;
             }
+        }
+        private void SetIdealList()
+        {
+            string insertQuery = "";
+            insertQuery = "INSERT INTO ideal_list(id) VALUES(" + R_txtId.Text + ")";
+
+            connection.Open();
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            try
+            {
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("이상형 리스트 생성 성공!");      //test
+
+                }
+                else
+                {
+                    MessageBox.Show("이상형 리스트 생성 실패!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            connection.Close();
         }
     }
 }

@@ -17,8 +17,11 @@ namespace KW_Project
     {
         private string currentUserId;
         private string currentUserGender;
+        private int genderFlag;
+        public string filepath = null;// 받아온 파일 경로
+        private const int CS_DROPSHADOW = 0x00020000;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
 
         public ProfileEditForm(string id,string gender)
         {
@@ -26,6 +29,11 @@ namespace KW_Project
             currentUserGender = gender;
             InitializeComponent();
             loadProfilePhoto(); // 현재 프로필 불러오기
+
+            if (currentUserGender == "남자")
+                genderFlag = 0;
+            else if (currentUserGender == "여자")
+                genderFlag = 1;
         }
 
         private void ProfileEditForm_Load(object sender, EventArgs e)
@@ -40,13 +48,21 @@ namespace KW_Project
                                                       , int nBottomRect
                                                       , int nWidthEllipse
                                                       , int nHeightEllipse);
-
+        // 폼 그림자 설정;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
 
-        public string filepath = null;// 받아온 파일 경로
         private void profilePic_Click(object sender, EventArgs e)
         {
             try
@@ -67,6 +83,12 @@ namespace KW_Project
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (filepath == null)
+            {
+                this.Close(); // 사진 변경 안 했을 경우 
+                return;
+            }
+
             UInt32 fileSize;
             BinaryReader br;
             FileStream fs;
@@ -78,10 +100,12 @@ namespace KW_Project
 
             connection.Open();
 
-            MessageBox.Show("쿼리문 실행"); // 나중에 없앨거임
-
             // 프로필 사진 업데이트
-            string insertQuery = "UPDATE profile_photo_data SET fileSize=@fileSize,file=@file WHERE id = @id";
+            string insertQuery = "";
+            if(currentUserGender == "남자")
+                insertQuery = "UPDATE profile_photo_data_m SET fileSize=@fileSize,file=@file WHERE id = @id";
+            else if (currentUserGender=="여자")
+                insertQuery = "UPDATE profile_photo_data_f SET fileSize=@fileSize,file=@file WHERE id = @id";
 
             MySqlCommand command = new MySqlCommand(insertQuery, connection);
             command.Parameters.AddWithValue("@id", currentUserId);
@@ -96,7 +120,6 @@ namespace KW_Project
                     MessageBox.Show("저장 완료!");
                     connection.Close();
                 }
-
                 else
                 {
                     MessageBox.Show("비정상 전송");
@@ -118,14 +141,16 @@ namespace KW_Project
         // mysql에서 프로필 사진 불러오기
         private void loadProfilePhoto()
         {
-            string insertQuery;
+            string insertQuery="";
             byte[] Image = null;
 
             MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
             MySqlCommand command = new MySqlCommand();
 
-            insertQuery = "SELECT file from profile_photo_data WHERE id=@id";
-
+            if (currentUserGender == "남자")
+                insertQuery = "SELECT file from profile_photo_data_m WHERE id=@id";
+            else if (currentUserGender == "여자")
+                insertQuery = "SELECT file from profile_photo_data_f WHERE id=@id";
             try
             {
                 connection.Open();
@@ -142,12 +167,33 @@ namespace KW_Project
 
                 reader.Close();
                 connection.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
 
+            }
+        }
+
+
+        private void btnFirstSet_Click(object sender, EventArgs e)
+        {
+            FirstSettingForm settingform = new FirstSettingForm(currentUserId, genderFlag, true);
+            DialogResult result = settingform.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("수정 완료!");
+            }
+        }
+
+        private void btnSecondSet_Click(object sender, EventArgs e)
+        {
+            SecondSettingForm settingform = new SecondSettingForm(currentUserId, genderFlag, true);
+            DialogResult result = settingform.ShowDialog();
+            if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("수정 완료!");
             }
         }
     }
