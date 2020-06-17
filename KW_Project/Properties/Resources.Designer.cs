@@ -63,6 +63,46 @@ namespace KW_Project.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _004_photo {
+            get {
+                object obj = ResourceManager.GetObject("004-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _007_menu {
+            get {
+                object obj = ResourceManager.GetObject("007-menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _008_mailbox {
+            get {
+                object obj = ResourceManager.GetObject("008-mailbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _009_heart {
+            get {
+                object obj = ResourceManager.GetObject("009-heart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap ezgif_com_gif_maker {
             get {
                 object obj = ResourceManager.GetObject("ezgif.com-gif-maker", resourceCulture);
@@ -86,16 +126,6 @@ namespace KW_Project.Properties {
         internal static System.Drawing.Bitmap first {
             get {
                 object obj = ResourceManager.GetObject("first", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap groups_icon_png_9_jpg {
-            get {
-                object obj = ResourceManager.GetObject("groups-icon-png-9_jpg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,26 +203,6 @@ namespace KW_Project.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap loadingHeart {
-            get {
-                object obj = ResourceManager.GetObject("loadingHeart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap loadingHeart1 {
-            get {
-                object obj = ResourceManager.GetObject("loadingHeart1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap male_shadow_circle_512 {
             get {
                 object obj = ResourceManager.GetObject("male-shadow-circle-512", resourceCulture);
@@ -206,46 +216,6 @@ namespace KW_Project.Properties {
         internal static System.Drawing.Bitmap noprofile {
             get {
                 object obj = ResourceManager.GetObject("noprofile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap z {
-            get {
-                object obj = ResourceManager.GetObject("z", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap 하트_배경 {
-            get {
-                object obj = ResourceManager.GetObject("하트 배경", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap 하트_스티치_배경_1 {
-            get {
-                object obj = ResourceManager.GetObject("하트 스티치 배경 1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap 하트파티_배경 {
-            get {
-                object obj = ResourceManager.GetObject("하트파티 배경", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

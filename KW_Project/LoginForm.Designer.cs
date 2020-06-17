@@ -41,19 +41,19 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(270, 99);
+            this.txtId.Location = new System.Drawing.Point(309, 124);
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(169, 21);
+            this.txtId.Size = new System.Drawing.Size(193, 25);
             this.txtId.TabIndex = 1;
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(270, 155);
+            this.txtPwd.Location = new System.Drawing.Point(309, 194);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(169, 21);
+            this.txtPwd.Size = new System.Drawing.Size(193, 25);
             this.txtPwd.TabIndex = 2;
             // 
             // label1
@@ -61,9 +61,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F);
             this.label1.ForeColor = System.Drawing.Color.MistyRose;
-            this.label1.Location = new System.Drawing.Point(268, 133);
+            this.label1.Location = new System.Drawing.Point(306, 166);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "비밀번호";
             // 
@@ -72,9 +72,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.MistyRose;
-            this.label2.Location = new System.Drawing.Point(270, 77);
+            this.label2.Location = new System.Drawing.Point(309, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
+            this.label2.Size = new System.Drawing.Size(50, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "학번";
             // 
@@ -83,10 +83,10 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnLogin.Location = new System.Drawing.Point(274, 202);
+            this.btnLogin.Location = new System.Drawing.Point(313, 252);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(76, 32);
+            this.btnLogin.Size = new System.Drawing.Size(87, 40);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -97,9 +97,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MistyRose;
-            this.label3.Location = new System.Drawing.Point(44, 19);
+            this.label3.Location = new System.Drawing.Point(50, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(367, 31);
+            this.label3.Size = new System.Drawing.Size(449, 38);
             this.label3.TabIndex = 7;
             this.label3.Text = "KwangWoon Date Project";
             // 
@@ -108,10 +108,10 @@
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(213)))), ((int)(((byte)(213)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegister.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRegister.Location = new System.Drawing.Point(357, 202);
+            this.btnRegister.Location = new System.Drawing.Point(408, 252);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(76, 32);
+            this.btnRegister.Size = new System.Drawing.Size(87, 40);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "회원가입";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -120,20 +120,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::KW_Project.Properties.Resources.first;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 85);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(211, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(81)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(483, 276);
+            this.ClientSize = new System.Drawing.Size(552, 345);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogin);
