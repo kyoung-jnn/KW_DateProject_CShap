@@ -63,6 +63,16 @@ namespace KW_Project.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _003_reload {
+            get {
+                object obj = ResourceManager.GetObject("003-reload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap _004_photo {
             get {
                 object obj = ResourceManager.GetObject("004-photo", resourceCulture);
@@ -196,6 +206,16 @@ namespace KW_Project.Properties {
         internal static System.Drawing.Bitmap instaiconpro {
             get {
                 object obj = ResourceManager.GetObject("instaiconpro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap loadingHeart1 {
+            get {
+                object obj = ResourceManager.GetObject("loadingHeart1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
