@@ -8,3 +8,12 @@ C:\Users\qwe06\KW_DateProject_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Ch
 C:\Users\qwe06\KW_DateProject_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.pdb
 C:\Users\qwe06\KW_DateProject_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.csprojAssemblyReference.cache
 C:\Users\qwe06\KW_DateProject_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.ChatServerForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\bin\Debug\KW_Project_Chat_Server.exe.config
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\bin\Debug\KW_Project_Chat_Server.exe
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\bin\Debug\KW_Project_Chat_Server.pdb
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.csprojAssemblyReference.cache
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.ChatServerForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.Properties.Resources.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.csproj.GenerateResource.cache
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.exe
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project_Chat_Server\obj\Debug\KW_Project_Chat_Server.pdb
