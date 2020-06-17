@@ -20,7 +20,10 @@ namespace KW_Project
         private string currentUserGender;
         private const int CS_DROPSHADOW = 0x00020000;
         public string idealId = string.Empty;
-        
+        private string[] myIdealAttraction;
+        private Dictionary<int, string> idealList = new Dictionary<int, string>();
+        private Dictionary<int, int> idealCount = new Dictionary<int, int>();
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect
                                                     , int nTopRect
@@ -44,14 +47,15 @@ namespace KW_Project
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
             //테두리 둥글게
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 25, 25));
 
             // 여기에 알고리즘 메소드 추가해야함
+            MatchingAlgorithm();
 
             if (currentUserGender == "남자")
-                idealId = "201584001";
+                idealId = MatchingAlgorithm();
             else if (currentUserGender == "여자")
-                idealId = "201619035";
+                idealId = MatchingAlgorithm();
 
             //매칭 알고리즘 구현시 31~35줄 수정해서 ideal_id를 매칭된 사람으로 해주면 댈듯?? -->6/16일 추가 : 전역변수로 idealId만들었으니 여기 할당해주면 댐
             //취소버튼 누르면 다시 다른사람 매칭해서 밑에 함수 두개 실행시켜주는식으로
@@ -178,10 +182,130 @@ namespace KW_Project
             }
         }
 
-
-        private void MatchingAlgorithm()
+        private string MatchingAlgorithm()
         {
+            string insertQuery = "";
+            int idealCnt = 0; // 일치하는 매력 총합
+            int idealId = 0;  // 가장 적합한 이성
+            bool flag = false; // 이상형 비교시 첫번째 비교할 이상형인지 확인하는 용
 
+            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+            MySqlCommand command = new MySqlCommand();
+            MySqlDataReader reader;
+
+            if (currentUserGender == "남자")
+                insertQuery = "SELECT user_data_m.ideal from project_data.user_data_m WHERE id=@curID;";
+            else if (currentUserGender == "여자")
+                insertQuery = "SELECT user_data_f.ideal from project_data.user_data_f WHERE id=@curID;";
+
+            try
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = insertQuery;
+                command.Parameters.AddWithValue("@curId", currentUserId);
+
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    string mIdeal = reader["ideal"].ToString();
+
+                    // 자신의 ideal 저장
+                    myIdealAttraction = mIdeal.Split('_');
+          
+                }
+
+                reader.Close();
+                connection.Close();
+
+                // 이성의 attraction 가져와 자신의 ideal과 비교
+                switch (currentUserGender)
+                {
+                    case "남자":
+                        {
+                            insertQuery = "SELECT id,user_data_f.attraction from project_data.user_data_f";
+
+                            connection.Open();
+                            command.Connection = connection;
+                            command.CommandText = insertQuery;
+
+                            reader = command.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                // DB에서 모든 이성의 데이터 가져오기
+                                if(idealList.ContainsKey(Convert.ToInt32(reader[0])) == false)
+                                    idealList.Add(Convert.ToInt32(reader[0]), reader[1].ToString());
+                            }
+
+                            reader.Close();
+                            connection.Close();
+
+                            break;
+                        }
+                    case "여자":
+                        {
+                            insertQuery = "SELECT id,user_data_m.attraction from project_data.user_data_m";
+
+                            connection.Open();
+                            command.Connection = connection;
+                            command.CommandText = insertQuery;
+
+                            reader = command.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                // DB에서 모든 이성의 데이터 가져오기
+                                idealList.Add(Convert.ToInt32(reader[0]), reader[1].ToString());
+                            }
+
+                            reader.Close();
+                            connection.Close();
+
+                            break;
+                        }
+                }
+
+                foreach(var pair in idealList)
+                {
+                    int Cnt = 0;
+
+                    string[]idealAttraction = pair.Value.Split('_');
+                    for(int i=0; i < myIdealAttraction.Length-1; i++)
+                    {
+                        if (idealAttraction.Contains(myIdealAttraction[i]))
+                            Cnt++;
+                    }
+                    if (idealCount.ContainsKey(pair.Key) == false)
+                        idealCount.Add(pair.Key, Cnt);
+                }
+
+                
+                foreach(var pair in idealCount)
+                {
+                    if(flag == false)
+                    {
+                        idealId = pair.Key;
+                        idealCnt = pair.Value;
+                        flag = true;
+                    }
+                    else
+                    {
+                        if(pair.Value >= idealCnt)
+                        {
+                            idealId = pair.Key;
+                            idealCnt = pair.Value;
+                        }
+                    }
+                }
+
+                // 적합한 이성의 ID Return
+                return idealId.ToString();
+            }
+            catch(Exception e){
+                MessageBox.Show(e.ToString());
+                return "알고리즘실패";
+            }
         }
 
         private void btnChat_Click(object sender, EventArgs e)

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.btnExit = new System.Windows.Forms.Button();
             this.lblIdealProfile1 = new System.Windows.Forms.Label();
             this.lblIdealProfile2 = new System.Windows.Forms.Label();
             this.lblProfile1 = new System.Windows.Forms.Label();
             this.lblProfile2 = new System.Windows.Forms.Label();
+            this.btnDislike = new System.Windows.Forms.Button();
+            this.btnLike = new System.Windows.Forms.Button();
             this.idealPic = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnBoard = new System.Windows.Forms.Button();
@@ -47,7 +50,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExit.Location = new System.Drawing.Point(477, 12);
+            this.btnExit.Location = new System.Drawing.Point(394, 8);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(37, 31);
@@ -96,9 +99,34 @@
             this.lblProfile2.TabIndex = 9;
             this.lblProfile2.Text = "label2";
             // 
+            // btnDislike
+            // 
+            this.btnDislike.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDislike.BackgroundImage")));
+            this.btnDislike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDislike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDislike.Location = new System.Drawing.Point(125, 458);
+            this.btnDislike.Name = "btnDislike";
+            this.btnDislike.Size = new System.Drawing.Size(65, 65);
+            this.btnDislike.TabIndex = 11;
+            this.btnDislike.UseVisualStyleBackColor = true;
+            // 
+            // btnLike
+            // 
+            this.btnLike.AutoSize = true;
+            this.btnLike.BackColor = System.Drawing.Color.Transparent;
+            this.btnLike.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLike.BackgroundImage")));
+            this.btnLike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLike.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLike.Location = new System.Drawing.Point(271, 458);
+            this.btnLike.Name = "btnLike";
+            this.btnLike.Size = new System.Drawing.Size(67, 65);
+            this.btnLike.TabIndex = 10;
+            this.btnLike.UseVisualStyleBackColor = false;
+            // 
             // idealPic
             // 
-            this.idealPic.Location = new System.Drawing.Point(68, 33);
+            this.idealPic.Location = new System.Drawing.Point(40, 43);
             this.idealPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idealPic.Name = "idealPic";
             this.idealPic.Size = new System.Drawing.Size(391, 398);
@@ -108,8 +136,8 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.White;
-            this.btnProfile.BackgroundImage = global::KW_Project.Properties.Resources.instaiconpro;
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BackgroundImage = global::KW_Project.Properties.Resources._007_menu;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.Red;
@@ -118,18 +146,18 @@
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnProfile.Location = new System.Drawing.Point(399, 572);
+            this.btnProfile.Location = new System.Drawing.Point(350, 580);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(115, 72);
+            this.btnProfile.Size = new System.Drawing.Size(61, 57);
             this.btnProfile.TabIndex = 3;
-            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnBoard
             // 
-            this.btnBoard.BackColor = System.Drawing.Color.White;
-            this.btnBoard.BackgroundImage = global::KW_Project.Properties.Resources.instafeed;
+            this.btnBoard.BackColor = System.Drawing.Color.Transparent;
+            this.btnBoard.BackgroundImage = global::KW_Project.Properties.Resources._004_photo;
             this.btnBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBoard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBoard.FlatAppearance.BorderColor = System.Drawing.Color.Red;
@@ -138,18 +166,18 @@
             this.btnBoard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnBoard.Location = new System.Drawing.Point(271, 572);
+            this.btnBoard.Location = new System.Drawing.Point(245, 576);
             this.btnBoard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoard.Name = "btnBoard";
-            this.btnBoard.Size = new System.Drawing.Size(115, 72);
+            this.btnBoard.Size = new System.Drawing.Size(80, 66);
             this.btnBoard.TabIndex = 2;
             this.btnBoard.UseVisualStyleBackColor = false;
             this.btnBoard.Click += new System.EventHandler(this.btnBoard_Click);
             // 
             // btnChat
             // 
-            this.btnChat.BackColor = System.Drawing.Color.White;
-            this.btnChat.BackgroundImage = global::KW_Project.Properties.Resources.instaiconchat;
+            this.btnChat.BackColor = System.Drawing.Color.Transparent;
+            this.btnChat.BackgroundImage = global::KW_Project.Properties.Resources._008_mailbox;
             this.btnChat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnChat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChat.FlatAppearance.BorderColor = System.Drawing.Color.Red;
@@ -158,18 +186,18 @@
             this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnChat.Location = new System.Drawing.Point(141, 572);
+            this.btnChat.Location = new System.Drawing.Point(150, 573);
             this.btnChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(115, 72);
+            this.btnChat.Size = new System.Drawing.Size(76, 67);
             this.btnChat.TabIndex = 1;
             this.btnChat.UseVisualStyleBackColor = false;
             this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.White;
-            this.btnHome.BackgroundImage = global::KW_Project.Properties.Resources.instaiconhome;
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BackgroundImage = global::KW_Project.Properties.Resources._003_reload;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Red;
@@ -178,10 +206,10 @@
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnHome.Location = new System.Drawing.Point(11, 572);
+            this.btnHome.Location = new System.Drawing.Point(56, 572);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(115, 72);
+            this.btnHome.Size = new System.Drawing.Size(75, 71);
             this.btnHome.TabIndex = 0;
             this.btnHome.UseVisualStyleBackColor = false;
             // 
@@ -190,7 +218,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 658);
+            this.ClientSize = new System.Drawing.Size(468, 658);
+            this.Controls.Add(this.btnDislike);
+            this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblProfile2);
             this.Controls.Add(this.lblProfile1);
             this.Controls.Add(this.lblIdealProfile2);
@@ -225,5 +255,7 @@
         private System.Windows.Forms.PictureBox idealPic;
         private System.Windows.Forms.Label lblProfile1;
         private System.Windows.Forms.Label lblProfile2;
+        private System.Windows.Forms.Button btnLike;
+        private System.Windows.Forms.Button btnDislike;
     }
 }
