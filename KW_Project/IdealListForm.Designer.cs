@@ -30,12 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAgeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDptCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDhatCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvDelCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,20 +68,8 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 4;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 529);
+            this.dataGridView1.Size = new System.Drawing.Size(569, 529);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(603, 25);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "이상형을 최대 10명까지 저장할 수 있습니다";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvNameCol
             // 
@@ -123,11 +111,23 @@
             this.dgvDelCol.ReadOnly = true;
             this.dgvDelCol.Width = 40;
             // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(569, 25);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "이상형을 최대 10명까지 저장할 수 있습니다";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // IdealListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 562);
+            this.ClientSize = new System.Drawing.Size(569, 562);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

@@ -237,5 +237,11 @@
   <ItemGroup>
     <None Include="Resources\003-reload.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dislike.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

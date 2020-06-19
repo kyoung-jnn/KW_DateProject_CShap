@@ -19,7 +19,6 @@ namespace KW_Project
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
         private string currentUserId;
         private string currentUserGender;
-        string[] ideals = new string[10];
         private string[] myIdealList;
 
 
@@ -33,6 +32,26 @@ namespace KW_Project
 
         private void IdealListForm_Load(object sender, EventArgs e)
         {
+            // Image Col 추가 
+            DataGridViewImageColumn ImageCol = new DataGridViewImageColumn();
+            ImageCol.Name = "사진";
+            ImageCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            ImageCol.Width = 180;
+
+            dataGridView1.Columns.Add(ImageCol);
+
+            dataGridView1.Columns["사진"].DisplayIndex = 0;
+
+            dataGridView1.Columns[0].Width = 60;
+            dataGridView1.Columns[1].Width = 60;
+            dataGridView1.Columns[2].Width = 95;
+            dataGridView1.Columns[3].Width = 45;
+            dataGridView1.Columns[4].Width = 45;
+
+            dataGridView1.RowTemplate.Height = 180;
+
+
+
             GetData(currentUserId); // 이상형 ID 불러오기
 
             SetData(); // 불러온 ID로 리스트 만들기
@@ -40,16 +59,11 @@ namespace KW_Project
 
         private void SetData()
         {
-            DataGridViewImageColumn ImageCol = new DataGridViewImageColumn();
-            ImageCol.Name = "사진";
-            ImageCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            dataGridView1.Columns.Add(ImageCol);
 
             for (int i = 0; i < myIdealList.Length-1; i++)
             { 
                 object[] dr = new object[6];
                 byte[] Image = null;
-                dataGridView1.RowTemplate.Height = 100;
 
                 try
                 {
@@ -69,11 +83,7 @@ namespace KW_Project
                     if (table1.Read())
                     {
                         Image = (byte[])table1[0];
-                        //dr[0] = new Bitmap(new MemoryStream(Image));
-                        //ImageCol.Image = new Bitmap(new MemoryStream(Image));
-       
                     }
-
                     table1.Close();
                     connection.Close();
 
@@ -107,9 +117,6 @@ namespace KW_Project
 
                     
                     dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4], new Bitmap(new MemoryStream(Image)));
-
-
-                    //dataGridView1.Columns[0].Width = 100;
 
                 }
                 catch (Exception e)
