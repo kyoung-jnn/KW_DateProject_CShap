@@ -19,9 +19,9 @@ namespace KW_Project
         private string currentUserId;
         private string currentUserGender;
         private const int CS_DROPSHADOW = 0x00020000;
-        public string idealId = string.Empty;
+        public string idealId = string.Empty; // 현재 화면에 나와있는 이성 ID
         private string[] myIdealAttraction;
-        private Dictionary<int, string> idealList = new Dictionary<int, string>();
+        private Dictionary<int, string> idealList = new Dictionary<int, string>(); // 이성 프로필 전부 저장
         private Dictionary<int, int> idealCount = new Dictionary<int, int>();
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -49,7 +49,7 @@ namespace KW_Project
             //테두리 둥글게
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 25, 25));
 
-            // 여기에 알고리즘 메소드 추가해야함
+            // 매칭 알고리즘
             MatchingAlgorithm();
 
             if (currentUserGender == "남자")
@@ -89,8 +89,6 @@ namespace KW_Project
             profileeditform.ShowDialog();
         }
 
-        
-
         // mysql에서 프로필 사진 불러오기
         private void LoadIdealPhoto()
         {
@@ -128,6 +126,7 @@ namespace KW_Project
 
             }
         }
+
         private void LoadIdealProfile()
         {
             string insertQuery = "";
@@ -308,6 +307,38 @@ namespace KW_Project
             }
         }
 
+        private void btnLike_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+
+            string insertQuery = null;
+            if (currentUserGender == "남자")
+                insertQuery = "UPDATE user_data_m SET ideal_id=@ideal_id WHERE id=@curID;";
+            else if (currentUserGender == "여자")
+                insertQuery = "UPDATE user_data_f SET ideal_id=@ideal_id WHERE id=@curID;";
+
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            try
+            {
+                command.Parameters.AddWithValue("@curID", currentUserId);
+                command.Parameters.AddWithValue("@ideal_id", idealId + "_");
+         
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("좋아요한 이상형 전송"); // 나중에 지움
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            connection.Close();
+
+        }
+
         private void btnChat_Click(object sender, EventArgs e)
         {
             /*
@@ -320,8 +351,12 @@ namespace KW_Project
                 this.Visible = true;
             }
             */
-            IdealList idealList = new IdealList(currentUserId, currentUserGender, idealId);
+            IdealListForm idealList = new IdealListForm(currentUserId, currentUserGender);
             idealList.ShowDialog();
+        }
+
+        private void btnDislike_Click(object sender, EventArgs e)
+        {
 
         }
     }

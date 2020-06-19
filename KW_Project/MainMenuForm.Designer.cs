@@ -109,6 +109,7 @@
             this.btnDislike.Size = new System.Drawing.Size(65, 65);
             this.btnDislike.TabIndex = 11;
             this.btnDislike.UseVisualStyleBackColor = true;
+            this.btnDislike.Click += new System.EventHandler(this.btnDislike_Click);
             // 
             // btnLike
             // 
@@ -123,6 +124,7 @@
             this.btnLike.Size = new System.Drawing.Size(67, 65);
             this.btnLike.TabIndex = 10;
             this.btnLike.UseVisualStyleBackColor = false;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
             // idealPic
             // 

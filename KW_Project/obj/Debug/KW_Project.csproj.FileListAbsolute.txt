@@ -139,4 +139,4 @@ C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Proje
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.BoardForm.resources
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.btnBoardShare.resources
 C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.ChatClientForm.resources
-C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.IdealList.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.IdealListForm.resources
