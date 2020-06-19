@@ -33,6 +33,8 @@
             this.lblIdealProfile2 = new System.Windows.Forms.Label();
             this.lblProfile1 = new System.Windows.Forms.Label();
             this.lblProfile2 = new System.Windows.Forms.Label();
+            this.btnDislike = new System.Windows.Forms.Button();
+            this.btnLike = new System.Windows.Forms.Button();
             this.idealPic = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnBoard = new System.Windows.Forms.Button();
@@ -47,7 +49,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnExit.Location = new System.Drawing.Point(477, 12);
+            this.btnExit.Location = new System.Drawing.Point(380, 8);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(37, 31);
@@ -77,28 +79,58 @@
             // lblProfile1
             // 
             this.lblProfile1.AutoSize = true;
-            this.lblProfile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProfile1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblProfile1.ForeColor = System.Drawing.Color.White;
             this.lblProfile1.Location = new System.Drawing.Point(6, 351);
             this.lblProfile1.Name = "lblProfile1";
-            this.lblProfile1.Size = new System.Drawing.Size(79, 29);
+            this.lblProfile1.Size = new System.Drawing.Size(99, 25);
             this.lblProfile1.TabIndex = 8;
             this.lblProfile1.Text = "label1";
             // 
             // lblProfile2
             // 
             this.lblProfile2.AutoSize = true;
-            this.lblProfile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProfile2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblProfile2.ForeColor = System.Drawing.Color.White;
             this.lblProfile2.Location = new System.Drawing.Point(6, 301);
             this.lblProfile2.Name = "lblProfile2";
-            this.lblProfile2.Size = new System.Drawing.Size(103, 38);
+            this.lblProfile2.Size = new System.Drawing.Size(139, 35);
             this.lblProfile2.TabIndex = 9;
             this.lblProfile2.Text = "label2";
             // 
+            // btnDislike
+            // 
+            this.btnDislike.BackgroundImage = global::KW_Project.Properties.Resources.dislike;
+            this.btnDislike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDislike.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDislike.FlatAppearance.BorderSize = 0;
+            this.btnDislike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDislike.Location = new System.Drawing.Point(111, 458);
+            this.btnDislike.Name = "btnDislike";
+            this.btnDislike.Size = new System.Drawing.Size(65, 65);
+            this.btnDislike.TabIndex = 11;
+            this.btnDislike.UseVisualStyleBackColor = true;
+            this.btnDislike.Click += new System.EventHandler(this.btnDislike_Click);
+            // 
+            // btnLike
+            // 
+            this.btnLike.AutoSize = true;
+            this.btnLike.BackColor = System.Drawing.Color.Transparent;
+            this.btnLike.BackgroundImage = global::KW_Project.Properties.Resources.like;
+            this.btnLike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLike.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLike.FlatAppearance.BorderSize = 0;
+            this.btnLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLike.Location = new System.Drawing.Point(257, 458);
+            this.btnLike.Name = "btnLike";
+            this.btnLike.Size = new System.Drawing.Size(67, 65);
+            this.btnLike.TabIndex = 10;
+            this.btnLike.UseVisualStyleBackColor = false;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
+            // 
             // idealPic
             // 
-            this.idealPic.Location = new System.Drawing.Point(68, 33);
+            this.idealPic.Location = new System.Drawing.Point(26, 43);
             this.idealPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idealPic.Name = "idealPic";
             this.idealPic.Size = new System.Drawing.Size(391, 398);
@@ -108,80 +140,80 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.White;
-            this.btnProfile.BackgroundImage = global::KW_Project.Properties.Resources.instaiconpro;
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BackgroundImage = global::KW_Project.Properties.Resources._007_menu;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnProfile.Location = new System.Drawing.Point(399, 572);
+            this.btnProfile.Location = new System.Drawing.Point(336, 580);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(115, 72);
+            this.btnProfile.Size = new System.Drawing.Size(61, 57);
             this.btnProfile.TabIndex = 3;
-            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnBoard
             // 
-            this.btnBoard.BackColor = System.Drawing.Color.White;
-            this.btnBoard.BackgroundImage = global::KW_Project.Properties.Resources.instafeed;
+            this.btnBoard.BackColor = System.Drawing.Color.Transparent;
+            this.btnBoard.BackgroundImage = global::KW_Project.Properties.Resources._004_photo;
             this.btnBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBoard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBoard.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnBoard.FlatAppearance.BorderSize = 0;
-            this.btnBoard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnBoard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnBoard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBoard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnBoard.Location = new System.Drawing.Point(271, 572);
+            this.btnBoard.Location = new System.Drawing.Point(231, 576);
             this.btnBoard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoard.Name = "btnBoard";
-            this.btnBoard.Size = new System.Drawing.Size(115, 72);
+            this.btnBoard.Size = new System.Drawing.Size(80, 66);
             this.btnBoard.TabIndex = 2;
             this.btnBoard.UseVisualStyleBackColor = false;
             this.btnBoard.Click += new System.EventHandler(this.btnBoard_Click);
             // 
             // btnChat
             // 
-            this.btnChat.BackColor = System.Drawing.Color.White;
-            this.btnChat.BackgroundImage = global::KW_Project.Properties.Resources.instaiconchat;
+            this.btnChat.BackColor = System.Drawing.Color.Transparent;
+            this.btnChat.BackgroundImage = global::KW_Project.Properties.Resources._008_mailbox;
             this.btnChat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnChat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChat.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnChat.FlatAppearance.BorderSize = 0;
-            this.btnChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnChat.Location = new System.Drawing.Point(141, 572);
+            this.btnChat.Location = new System.Drawing.Point(136, 573);
             this.btnChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(115, 72);
+            this.btnChat.Size = new System.Drawing.Size(76, 67);
             this.btnChat.TabIndex = 1;
             this.btnChat.UseVisualStyleBackColor = false;
             this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.White;
-            this.btnHome.BackgroundImage = global::KW_Project.Properties.Resources.instaiconhome;
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BackgroundImage = global::KW_Project.Properties.Resources._003_reload;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnHome.Location = new System.Drawing.Point(11, 572);
+            this.btnHome.Location = new System.Drawing.Point(42, 572);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(115, 72);
+            this.btnHome.Size = new System.Drawing.Size(75, 71);
             this.btnHome.TabIndex = 0;
             this.btnHome.UseVisualStyleBackColor = false;
             // 
@@ -190,7 +222,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(526, 658);
+            this.ClientSize = new System.Drawing.Size(446, 658);
+            this.Controls.Add(this.btnDislike);
+            this.Controls.Add(this.btnLike);
             this.Controls.Add(this.lblProfile2);
             this.Controls.Add(this.lblProfile1);
             this.Controls.Add(this.lblIdealProfile2);
@@ -225,5 +259,7 @@
         private System.Windows.Forms.PictureBox idealPic;
         private System.Windows.Forms.Label lblProfile1;
         private System.Windows.Forms.Label lblProfile2;
+        private System.Windows.Forms.Button btnLike;
+        private System.Windows.Forms.Button btnDislike;
     }
 }
