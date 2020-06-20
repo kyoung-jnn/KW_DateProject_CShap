@@ -14,7 +14,7 @@ namespace KW_Project
 {
     public partial class RegisterForm : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
         public RegisterForm()
         {
             InitializeComponent();
@@ -81,8 +81,35 @@ namespace KW_Project
                 }
 
                 connection.Close();
+                SetIdealList();
                 this.DialogResult = DialogResult.Cancel;
             }
+        }
+        private void SetIdealList()
+        {
+            string insertQuery = "";
+            insertQuery = "INSERT INTO ideal_list(id) VALUES(" + R_txtId.Text + ")";
+
+            connection.Open();
+            MySqlCommand command = new MySqlCommand(insertQuery, connection);
+            try
+            {
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("이상형 리스트 생성 성공!");      //test
+
+                }
+                else
+                {
+                    MessageBox.Show("이상형 리스트 생성 실패!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            connection.Close();
         }
     }
 }
