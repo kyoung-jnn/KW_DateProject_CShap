@@ -8,15 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
+
 using System.IO;
 
 namespace KW_Project
 {
     public partial class btnBoardShare : Form
     {
-
+        private const int CS_DROPSHADOW = 0x00020000;
         private string currentUserId = null;
         private string currentUserGender = null;
+        public string filepath = null;
+
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
         public btnBoardShare(string id,string gender)
         {
             currentUserId = id;
@@ -25,13 +41,21 @@ namespace KW_Project
             loadRecentPhoto();
         }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect
+                                             , int nTopRect
+                                             , int nRightRect
+                                             , int nBottomRect
+                                             , int nWidthEllipse
+                                             , int nHeightEllipse);
+
        
-        
-        public string filepath = null;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
-
-        
+        private void btnBoardShare_Load(object sender, EventArgs e)
+        {
+            //테두리 둥글게
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
+        }
         //뒤로가기
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -232,5 +256,7 @@ namespace KW_Project
         {
             this.Close();
         }
+
+      
     }
 }
