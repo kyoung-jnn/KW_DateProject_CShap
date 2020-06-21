@@ -19,8 +19,9 @@ namespace KW_Project
         private string currentUserGender;
         private int genderFlag;
         public string filepath = null;// 받아온 파일 경로
+        private const int CS_DROPSHADOW = 0x00020000;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
 
         public ProfileEditForm(string id,string gender)
         {
@@ -47,7 +48,16 @@ namespace KW_Project
                                                       , int nBottomRect
                                                       , int nWidthEllipse
                                                       , int nHeightEllipse);
-
+        // 폼 그림자 설정;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
