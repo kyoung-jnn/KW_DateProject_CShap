@@ -115,8 +115,11 @@ namespace KW_Project
                     table2.Close();
                     connection.Close();
 
-                    
-                    dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4], new Bitmap(new MemoryStream(Image)));
+                    try
+                    {
+                        dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4], new Bitmap(new MemoryStream(Image)));
+                    }
+                    catch { }
 
                 }
                 catch (Exception e)
