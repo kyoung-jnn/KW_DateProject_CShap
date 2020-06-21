@@ -177,3 +177,4 @@ C:\Users\pc\Downloads\KW_DateProject_CShap-master\KW_DateProject_CShap-master\KW
 C:\Users\pc\Downloads\KW_DateProject_CShap-master\KW_DateProject_CShap-master\KW_Project\obj\Debug\KW_Project.csproj.CopyComplete
 C:\Users\pc\Downloads\KW_DateProject_CShap-master\KW_DateProject_CShap-master\KW_Project\obj\Debug\KW_Project.exe
 C:\Users\pc\Downloads\KW_DateProject_CShap-master\KW_DateProject_CShap-master\KW_Project\obj\Debug\KW_Project.pdb
+C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project\obj\Debug\KW_Project.IdealListForm.resources
