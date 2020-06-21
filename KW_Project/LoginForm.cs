@@ -16,11 +16,29 @@ namespace KW_Project
     {
         MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
+        //ChatServerForms sf;
+        //ChatClientForm cf;
+        //public static string id;
         public loginForm()
         {
             InitializeComponent();
         }
 
+        //public loginForm(ChatServerForms form)
+        //{
+        //    sf = form;
+        //}
+
+        //public loginForm(ChatClientForm form)
+        //{
+        //    cf = form;
+        //}
+
+        //public string getId()
+        //{
+        //    id = txtId.Text;
+        //    return id;
+        //}
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
