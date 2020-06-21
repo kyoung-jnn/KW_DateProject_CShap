@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace KW_Project
 {
@@ -19,17 +20,18 @@ namespace KW_Project
     {
         private string currentUserId;
         private string currentUserGender;
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
+        private string[] LoadAllUsersFeed;
+        
         private const int CS_DROPSHADOW = 0x00020000;
-
+        MySqlConnection con = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
         public BoardForm(string id,string gender)
         {
+
             currentUserId = id;
             currentUserGender = gender;
-           
+        
             InitializeComponent();
-          
-            loadAllUsers();
+           
 
         }
 
@@ -40,11 +42,118 @@ namespace KW_Project
                                                     , int nBottomRect
                                                     , int nWidthEllipse
                                                     , int nHeightEllipse);
+        /*
 
+        private void GetData()
+        {
+            try
+            {
+                con.Open();
+                string ReadQuery = null;
+                if (currentUserGender == "남자")
+                    ReadQuery = "SELECT * from board_data_f WHERE id>10000000;";
+                else if (currentUserGender == "여자")
+                    ReadQuery = "SELECT * from board_data_m WHERE id>10000000;";
+
+                MySqlCommand command = new MySqlCommand(ReadQuery, con);
+                
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    string allpic = reader.ToString();
+                    //게시판 ID들 저장
+                    LoadAllUsersFeed = allpic.Split('_');
+                }
+                reader.Close();
+                con.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+        */
+        private void connectData()
+        {
+            
+            MySqlCommand query = con.CreateCommand();
+            /*
+                        DataGridViewImageColumn imageCell = new DataGridViewImageColumn();
+                        imageCell.Name = "file";
+                        imageCell.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                        imageCell.Width = 180;
+
+                        dataGridView1.Columns.Add(imageCell);
+                        dataGridView1.Columns["file"].DisplayIndex = 0;
+            
+            DataGridViewImageColumn img1 = new DataGridViewImageColumn();
+            img1.Name = "file";
+            img1.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            img1.Width = 180;
+            DataGridViewImageColumn img2 = new DataGridViewImageColumn();
+            img2.Name = "file2";
+            img2.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            img2.Width = 180;
+            DataGridViewImageColumn img3 = new DataGridViewImageColumn();
+            img3.Name = "file3";
+            img3.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            img3.Width = 180;
+            dataGridView1.RowTemplate.Height = 180;
+            dataGridView1.Columns.Add(img1);
+           dataGridView1.Columns["file"].DisplayIndex = 0;
+            dataGridView1.Columns.Add(img2);
+            dataGridView1.Columns["file2"].DisplayIndex = 1;
+            dataGridView1.Columns.Add(img3);
+            dataGridView1.Columns["file3"].DisplayIndex = 2;
+            */
+
+
+
+
+
+             if (currentUserGender == "남자")
+                  query.CommandText = "SELECT * from board_data_f";
+             else if (currentUserGender == "여자") 
+            query.CommandText = "SELECT * from board_data_f ";
+          
+          
+            try
+            {
+                con.Open();
+
+                MySqlDataReader reader = query.ExecuteReader();
+             
+               dataGridView1.Rows.Clear();
+            
+                for (int i = 0; reader.Read(); i++)
+                {
+
+                    dataGridView1.Rows.Add();
+           
+                    dataGridView1.Rows[i].Cells["file"].Value = reader["file"];
+
+
+                    
+                }
+            }catch(Exception e)
+            {
+                return;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         private void BoardForm_Load(object sender, EventArgs e)
         {
             //테두리 둥글게
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
+
+           
+
+           
+
+            connectData(); //그 아이디에 해당하는 사진들을 모두 불러온다.
         }
 
         protected override CreateParams CreateParams
@@ -56,7 +165,11 @@ namespace KW_Project
                 return cp;
             }
         }
+     
 
+     
+
+        /*
         private void loadAllUsers()
         {
             string insertQuery = "";
@@ -250,6 +363,7 @@ namespace KW_Project
             
 
         }
+        */
 
         private void BtnShare_Click(object sender, EventArgs e)
         {
