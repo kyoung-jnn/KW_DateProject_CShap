@@ -23,7 +23,7 @@ namespace KW_Project
         private string[] myIdealAttraction;
         private Dictionary<int, string> idealList = new Dictionary<int, string>(); // 이성 프로필 전부 저장
         private Dictionary<int, int> idealCount = new Dictionary<int, int>(); 
-        private List<int> selected_ideal = new List<int>();   //좋아요 or 싫어요 누른 이성 key 저장
+        private Dictionary<int,int> selected_ideal = new Dictionary<int,int>();   //좋아요 or 싫어요 누른 이성 key, 싫어요:0, 좋아요:1 저장
         private MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -263,6 +263,7 @@ namespace KW_Project
                             break;
                         }
                 }
+
                 // selected_ideal 초기화
                 if (currentUserGender == "남자")
                     insertQuery = "SELECT ideal_id from user_data_m where id=@curId";
@@ -283,7 +284,7 @@ namespace KW_Project
 
                     for(int i = 0; i < name.Length-1;i++)
                     {
-                        selected_ideal.Add(Int32.Parse(name[i]));
+                        selected_ideal.Add(Int32.Parse(name[i]),1);
                     }
                     
                 }
@@ -300,12 +301,12 @@ namespace KW_Project
         private string MatchingAlgorithm()
         {
             int idealCnt = 0; // 일치하는 매력 총 개수
-            int idealId = 0;  // 가장 적합한 이성
+            int idealid = 0;  // 가장 적합한 이성
             bool flag = false; // 이상형 비교시 첫번째 비교할 이상형인지 확인하는 변수
             
             foreach (var pair in idealList)
             {
-                if (selected_ideal.Contains(pair.Key))
+                if (selected_ideal.Keys.Contains(pair.Key))
                     continue;
                 int Cnt = 0;
                 
@@ -321,11 +322,11 @@ namespace KW_Project
                             
             foreach(var pair in idealCount)
             {
-                if (selected_ideal.Contains(pair.Key))
+                if (selected_ideal.Keys.Contains(pair.Key))
                     continue;
                 if (flag == false) // 첫번째 사람일때 변수 초기화
                 {
-                    idealId = pair.Key;
+                    idealid = pair.Key;
                     idealCnt = pair.Value;
                     flag = true;
                 }
@@ -333,15 +334,32 @@ namespace KW_Project
                 {
                     if(pair.Value >= idealCnt)
                     {
-                        idealId = pair.Key;
+                        idealid = pair.Key;
                         idealCnt = pair.Value;
                     }
                 }
             }
-            if (idealId == 0) { MessageBox.Show("모든 이성들에게 추파를 던지셨습니다!"); }
+            if (idealid == 0) {
+                for (int i = 0; i < selected_ideal.Count; i++)
+                {
+                    if (selected_ideal[selected_ideal.Keys.ToArray()[i]] == 0)
+                    {
+                        selected_ideal.Remove(selected_ideal.Keys.ToArray()[i]);
+                    }
+                }
+                if (selected_ideal.Count == idealList.Count)
+                {
+                    MessageBox.Show("모든 이성들에게 추파를 던지셨습니다!");
+                }
+                else
+                {
+                    idealid = Int32.Parse(MatchingAlgorithm());
+                }
+            }
 
+            //MessageBox.Show(idealid.ToString());
             // 적합한 이성의 ID Return
-            return idealId.ToString();
+            return idealid.ToString();
         }
 
         private string tempIdealList; // 일시적으로 DB에 ideal_id 값을 저장하는 용도
@@ -379,7 +397,7 @@ namespace KW_Project
                             {
                                 //idealList.Remove(key);
                                 //idealCount.Remove(key);
-                                selected_ideal.Add(key);
+                                selected_ideal.Add(key,1);
                             }
                         }
 
@@ -441,7 +459,7 @@ namespace KW_Project
                 {
                     //idealList.Remove(key);
                     //idealCount.Remove(key);
-                    selected_ideal.Add(key);
+                    selected_ideal.Add(key,1);
                 }
             }
 
@@ -463,7 +481,7 @@ namespace KW_Project
                 {
                     //idealList.Remove(key);
                     //idealCount.Remove(key);
-                    selected_ideal.Add(key);
+                    selected_ideal.Add(key, 0);
                 }
             }
 
