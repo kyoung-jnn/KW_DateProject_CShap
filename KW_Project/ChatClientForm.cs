@@ -11,7 +11,6 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Diagnostics;
 using System.Net;
-using KW_Project_Chat_Server;
 
 namespace KW_Project
 {
@@ -20,7 +19,7 @@ namespace KW_Project
         TcpClient clientSocket = new TcpClient();
         NetworkStream stream = default(NetworkStream);
         string message = string.Empty;
-        private int PORT = 12345;
+        private int PORT = 7777;
         
         public ChatClientForm()
         {
