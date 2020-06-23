@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace KW_Project
 {
-    public partial class ChatServerForms : Form
+    public partial class ChatServerForm : Form
     {
         public NetworkStream net_stream;
         public StreamReader reader;
@@ -30,7 +30,7 @@ namespace KW_Project
         public bool is_connect = false;
 
 
-        public ChatServerForms()
+        public ChatServerForm()
         {
             InitializeComponent();
         }

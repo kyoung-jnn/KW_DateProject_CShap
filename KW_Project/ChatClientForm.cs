@@ -64,9 +64,9 @@ namespace KW_Project
         {
             this.Invoke(new MethodInvoker(delegate ()
             {
-                txt_all.AppendText(msg + "\r\n");
-                txt_all.Focus();
-                txt_all.ScrollToCaret();
+                r.AppendText(msg + "\r\n");
+                r.Focus();
+                r.ScrollToCaret();
                 txt_send.Focus();
             }));
         }
@@ -93,7 +93,7 @@ namespace KW_Project
 
             try
             {
-                m_Client.Connect("127.0.0.1",PORT);
+                m_Client.Connect("127.0.0.1", PORT);
             }
             catch
             {
