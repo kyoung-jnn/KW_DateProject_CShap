@@ -18,7 +18,7 @@ namespace KW_Project
         public NetworkStream net_stream;
         public StreamReader reader;
         public StreamWriter writer;
-        const int PORT = 2002;
+        const int PORT = 7777;
         private Thread read_thread;
         private string id;
 
@@ -51,7 +51,6 @@ namespace KW_Project
 
         private void ChatClientForm_FormClosing(object sender, FormClosedEventArgs e)
         {
-
             Disconnect();
         }
 
@@ -89,28 +88,36 @@ namespace KW_Project
 
         public void Connect()
         {
-            m_Client = new TcpClient();
-
             try
             {
-                m_Client.Connect("127.0.0.1", PORT);
+                m_Client = new TcpClient();
+
+                try
+                {
+                    m_Client.Connect("127.0.0.1", PORT);
+                }
+                catch
+                {
+                    is_connect = false;
+                    return;
+                }
+                is_connect = true;
+                MessageBox.Show("서버에 연결");
+
+
+                net_stream = m_Client.GetStream();
+
+                reader = new StreamReader(net_stream);
+                writer = new StreamWriter(net_stream);
+
+                read_thread = new Thread(new ThreadStart(Receive));
+                read_thread.Start();
             }
-            catch
+            catch(Exception e)
             {
-                is_connect = false;
-                return;
+                MessageBox.Show(e.ToString());
             }
-            is_connect = true;
-            MessageBox.Show("서버에 연결");
-
-
-            net_stream = m_Client.GetStream();
-
-            reader = new StreamReader(net_stream);
-            writer = new StreamWriter(net_stream);
-
-            read_thread = new Thread(new ThreadStart(Receive));
-            read_thread.Start();
+            
         }
 
         public void Receive()

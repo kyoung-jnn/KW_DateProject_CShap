@@ -46,7 +46,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(506, 21);
+            this.textBox1.Size = new System.Drawing.Size(578, 25);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "이상형을 최대 10명까지 저장할 수 있습니다";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -74,13 +74,15 @@
             this.dgvDhatCol,
             this.dgvDelCol});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 33);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 4;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(578, 529);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dgvNameCol
             // 
@@ -124,13 +126,15 @@
             // 
             // GotChat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 450);
+            this.ClientSize = new System.Drawing.Size(578, 562);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GotChat";
             this.Text = "GotChat";
+            this.Load += new System.EventHandler(this.GotChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

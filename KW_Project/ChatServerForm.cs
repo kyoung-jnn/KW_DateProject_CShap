@@ -19,7 +19,7 @@ namespace KW_Project
         public NetworkStream net_stream;
         public StreamReader reader;
         public StreamWriter writer;
-        const int PORT = 2002;
+        const int PORT = 7777;
         private Thread read_thread;
         private string id;
 
@@ -75,7 +75,7 @@ namespace KW_Project
                 listener.Start();
 
                 is_stop = true;
-                Message("상대방에게 채팅을 요청했습니다!");
+                Message("이상형에게 채팅을 요청했습니다!");
 
 
                 while (is_stop)
@@ -85,7 +85,7 @@ namespace KW_Project
                     if (hClient.Connected)
                     {
                         is_connect = true;
-                        Message("상대방이 입장했습니다!");
+                        Message("이상형이 입장했습니다!");
 
                         net_stream = hClient.GetStream();
                         reader = new StreamReader(net_stream);

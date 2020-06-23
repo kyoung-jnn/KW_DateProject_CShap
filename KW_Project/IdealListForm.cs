@@ -21,15 +21,12 @@ namespace KW_Project
         private string currentUserGender;
         private List<string> myIdealList = new List<string>();
        
-
-
         public IdealListForm(string myId, string myGender)
         {
             InitializeComponent();
             currentUserId = myId;
             currentUserGender = myGender;
         }
-
 
         private void IdealListForm_Load(object sender, EventArgs e)
         {

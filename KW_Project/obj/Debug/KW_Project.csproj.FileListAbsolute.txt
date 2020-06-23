@@ -215,3 +215,5 @@ C:\Users\pc\Downloads\KW_DateProject_CShap-dev_Main\KW_DateProject_CShap-dev_Mai
 C:\Users\pc\Downloads\KW_DateProject_CShap-dev_Main\KW_DateProject_CShap-dev_Main\KW_Project\obj\Debug\KW_Project.csproj.CopyComplete
 C:\Users\pc\Downloads\KW_DateProject_CShap-dev_Main\KW_DateProject_CShap-dev_Main\KW_Project\obj\Debug\KW_Project.exe
 C:\Users\pc\Downloads\KW_DateProject_CShap-dev_Main\KW_DateProject_CShap-dev_Main\KW_Project\obj\Debug\KW_Project.pdb
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.ChatServerForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.GotChat.resources

@@ -498,7 +498,11 @@ namespace KW_Project
             idealList.ShowDialog();
         }
 
-       
+        private void btn_GotChat_Click(object sender, EventArgs e)
+        {
+            GotChat gotChat = new GotChat(currentUserId, currentUserGender);
+            gotChat.ShowDialog();
+        }
     }
 
 }

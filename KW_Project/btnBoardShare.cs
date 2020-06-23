@@ -195,7 +195,7 @@ namespace KW_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("최근 일상을 등록해주세요!");
+                MessageBox.Show(ex.ToString());
 
             }
         }

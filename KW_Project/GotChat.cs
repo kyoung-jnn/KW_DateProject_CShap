@@ -28,7 +28,7 @@ namespace KW_Project
             currentUserId = myId;
             currentUserGender = myGender;
         }
-        private void IdealListForm_Load(object sender, EventArgs e)
+        private void GotChat_Load(object sender, EventArgs e)
         {
             // Image Col 추가 
             DataGridViewImageColumn ImageCol = new DataGridViewImageColumn();
@@ -37,7 +37,7 @@ namespace KW_Project
             ImageCol.Width = 180;
 
             dataGridView1.Columns.Add(ImageCol);
-
+            
             dataGridView1.Columns["사진"].DisplayIndex = 0;
 
             dataGridView1.Columns[0].Width = 60;
@@ -50,87 +50,92 @@ namespace KW_Project
 
 
 
-            GetData(currentUserId); // 나를 좋아요 누른 사람들 ID 불러오기
+            //GetData(currentUserId); // 나를 좋아요 누른 사람들 ID 불러오기
 
             SetData(); // 불러온 ID로 리스트 만들기
         }
 
         private void SetData()
         {
+            object[] dr = new object[6];
+            byte[] Image = null;
 
-            for (int i = 0; i < myIdealList.Count; i++)
-            {
-                object[] dr = new object[6];
-                byte[] Image = null;
+            /* for (int i = 0; i < myIdealList.Count; i++)
+             {*//*
+                             object[] dr = new object[6];
+
+
+                 try
+                 {
+                     string ReadQuery = "";
+
+                     //
+                     //
+                     //사진 불러오기
+                     if (currentUserGender == "남자")
+                         ReadQuery = "SELECT file from profile_photo_data_f WHERE id=" + myIdealList[i];
+                     else if (currentUserGender == "여자")
+                         ReadQuery = "SELECT file from profile_photo_data_m WHERE id=" + myIdealList[i];
+
+                     connection.Open();
+                     MySqlCommand cmd1 = new MySqlCommand(ReadQuery, connection);
+                     MySqlDataReader table1 = cmd1.ExecuteReader();
+                     if (table1.Read())
+                     {
+                         Image = (byte[])table1[0];
+                     }
+                     table1.Close();
+                     connection.Close();
+
+
+                     //
+                     //
+                     //나머지 정보 불러오기
+                     if (currentUserGender == "남자")
+                         ReadQuery = "SELECT * from user_data_f WHERE id=" + myIdealList[i];
+                     else if (currentUserGender == "여자")
+                         ReadQuery = "SELECT * from user_data_m WHERE id=" + myIdealList[i];
+
+                     connection.Open();
+                     MySqlCommand cmd2 = new MySqlCommand(ReadQuery, connection);
+                     MySqlDataReader table2 = cmd2.ExecuteReader();
+
+                     if (table2.Read())
+                     {
+                        
+                         //
+                         // 채팅 버튼
+                      *//*   dr[3] = new Button();
+                         dr[4] = new Button();*//*
+                     }
+
+                     table2.Close();
+                     connection.Close();*/
+                dr[0] = "이민호";
+                dr[1] = "26";
+                dr[2] = "컴소";
+                dr[3] = new Button();
+                dr[4] = new Button();
+                dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4],null);
 
                 try
-                {
-                    string ReadQuery = "";
+                { 
+                    
 
-                    //
-                    //
-                    //사진 불러오기
-                    if (currentUserGender == "남자")
-                        ReadQuery = "SELECT file from profile_photo_data_f WHERE id=" + myIdealList[i];
-                    else if (currentUserGender == "여자")
-                        ReadQuery = "SELECT file from profile_photo_data_m WHERE id=" + myIdealList[i];
-
-                    connection.Open();
-                    MySqlCommand cmd1 = new MySqlCommand(ReadQuery, connection);
-                    MySqlDataReader table1 = cmd1.ExecuteReader();
-                    if (table1.Read())
-                    {
-                        Image = (byte[])table1[0];
-                    }
-                    table1.Close();
-                    connection.Close();
-
-
-                    //
-                    //
-                    //나머지 정보 불러오기
-                    if (currentUserGender == "남자")
-                        ReadQuery = "SELECT * from user_data_f WHERE id=" + myIdealList[i];
-                    else if (currentUserGender == "여자")
-                        ReadQuery = "SELECT * from user_data_m WHERE id=" + myIdealList[i];
-
-                    connection.Open();
-                    MySqlCommand cmd2 = new MySqlCommand(ReadQuery, connection);
-                    MySqlDataReader table2 = cmd2.ExecuteReader();
-
-                    if (table2.Read())
-                    {
-                        dr[0] = table2["name"];
-                        dr[1] = table2["age"];
-                        dr[2] = table2["department"];
-                        //
-                        // 채팅 버튼
-                        dr[3] = new Button();
-                        dr[4] = new Button();
-                        //((Button)dr[3]).MouseClick += btnChat_Click;
-                        //((Button)dr[4]).MouseClick += btnDel_Click;
-                    }
-
-                    table2.Close();
-                    connection.Close();
-
-                    try
-                    {
-                        dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4], new Bitmap(new MemoryStream(Image)));
-                    }
-                    catch { }
-
+                    //dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4], new Bitmap(new MemoryStream(Image)));
+                    
+            
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.ToString());
                 }
+
                 foreach (DataGridViewRow obj in dataGridView1.Rows)
                 {
                     obj.Cells[3].Value = "채팅";
                     obj.Cells[4].Value = "삭제";
                 }
-            }
         }
 
         private void GetData(string myId)       //mysql에 이상형들이 저장되어있으면 불러오기
@@ -172,6 +177,7 @@ namespace KW_Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show("test");
             DataGridView grid = (DataGridView)sender;
             int intRow = e.RowIndex;
             int intCol = e.ColumnIndex;
@@ -188,6 +194,11 @@ namespace KW_Project
                     btn_Del(intRow);
                     break;
             }
+        }
+        private void btn_Chat(int intRow)
+        {
+            ChatClientForm client = new ChatClientForm();
+            client.Show();
         }
         private void btn_Del(int intRow)
         {
@@ -250,9 +261,6 @@ namespace KW_Project
             }
             connection.Close();
         }
-        private void btn_Chat(int intRow)
-        {
-
-        }
+       
     }
 }

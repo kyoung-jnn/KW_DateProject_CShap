@@ -35,28 +35,28 @@
             // 
             // r
             // 
-            this.r.Location = new System.Drawing.Point(10, 10);
+            this.r.Location = new System.Drawing.Point(11, 12);
             this.r.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.r.Multiline = true;
             this.r.Name = "r";
-            this.r.Size = new System.Drawing.Size(316, 350);
+            this.r.Size = new System.Drawing.Size(361, 436);
             this.r.TabIndex = 0;
             // 
             // txt_send
             // 
-            this.txt_send.Location = new System.Drawing.Point(10, 396);
+            this.txt_send.Location = new System.Drawing.Point(11, 495);
             this.txt_send.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_send.Multiline = true;
             this.txt_send.Name = "txt_send";
-            this.txt_send.Size = new System.Drawing.Size(238, 94);
+            this.txt_send.Size = new System.Drawing.Size(271, 116);
             this.txt_send.TabIndex = 1;
             // 
             // btn_send
             // 
-            this.btn_send.Location = new System.Drawing.Point(253, 396);
+            this.btn_send.Location = new System.Drawing.Point(289, 495);
             this.btn_send.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(74, 93);
+            this.btn_send.Size = new System.Drawing.Size(85, 116);
             this.btn_send.TabIndex = 2;
             this.btn_send.Text = "▲";
             this.btn_send.UseVisualStyleBackColor = true;
@@ -65,16 +65,16 @@
             // 
             // ChatClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(337, 518);
+            this.ClientSize = new System.Drawing.Size(385, 648);
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.txt_send);
             this.Controls.Add(this.r);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChatClientForm";
-            this.Text = "ChatClientForm";
+            this.Text = "이상형과 채팅";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatClientForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
