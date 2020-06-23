@@ -21,7 +21,7 @@ namespace KW_Project
         public string filepath = null;// 받아온 파일 경로
         private const int CS_DROPSHADOW = 0x00020000;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
         public ProfileEditForm(string id,string gender)
         {

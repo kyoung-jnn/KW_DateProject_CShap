@@ -205,15 +205,6 @@
     <None Include="bin\Debug\heart2.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ezgif.com-gif-maker.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ezgif.com-optimize.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\first.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\loadingHeart.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +251,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\like.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-optimize.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\first.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

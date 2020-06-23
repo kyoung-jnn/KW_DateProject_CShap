@@ -125,7 +125,7 @@ namespace KW_Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ezgif_com_gif_maker {
             get {
-                object obj = ResourceManager.GetObject("ezgif.com-gif-maker", resourceCulture);
+                object obj = ResourceManager.GetObject("ezgif_com_gif_maker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace KW_Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ezgif_com_optimize {
             get {
-                object obj = ResourceManager.GetObject("ezgif.com-optimize", resourceCulture);
+                object obj = ResourceManager.GetObject("ezgif_com_optimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,16 +156,6 @@ namespace KW_Project.Properties {
         internal static System.Drawing.Bitmap heart {
             get {
                 object obj = ResourceManager.GetObject("heart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap heart2 {
-            get {
-                object obj = ResourceManager.GetObject("heart2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
