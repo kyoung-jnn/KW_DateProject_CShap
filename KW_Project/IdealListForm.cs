@@ -12,6 +12,8 @@ using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient; // Mysql 사용
 using System.IO;
 
+
+
 namespace KW_Project
 {
     public partial class IdealListForm : Form
@@ -55,7 +57,15 @@ namespace KW_Project
             GetData(currentUserId); // 이상형 ID 불러오기
 
             SetData(); // 불러온 ID로 리스트 만들기
+
+           
+
+
+
+
         }
+
+        
 
         private void SetData()
         {
@@ -179,11 +189,46 @@ namespace KW_Project
         private void btnChat_Click(object sender, EventArgs e)
         {
             MessageBox.Show(((Button)sender).Controls.ToString());
+            ChatServerForms chat = new ChatServerForms();
+            chat.Show();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hi!");
         }
+
+        bool IsOpenForm (string form_name) //현재 인자로 들어간 폼이 열려있는지 확인.
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach(Form form in fc)
+            {
+                if (form.Name == form_name)
+                    return true;
+            }
+            return false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChatClientForm chat_client = new ChatClientForm(this);
+
+            while (!IsOpenForm("ChatServerForms")) //서버폼이 열리지 않았으면 연결시도를 하면서 서버가 열리길 기다림.
+            {
+                chat_client.Connect();
+                if (chat_client.is_connect)
+                {
+                    break;
+                }
+            }
+            chat_client.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChatServerForms chat = new ChatServerForms();
+            chat.Show();
+        }
+
     }
 }

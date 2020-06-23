@@ -71,6 +71,13 @@
     <Compile Include="FirstSettingForm.Designer.cs">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatServerForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>ChatServerForms.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IdealListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChatClientForm.resx">
       <DependentUpon>ChatClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatServerForms.resx">
+      <DependentUpon>ChatServerForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstSettingForm.resx">
       <DependentUpon>FirstSettingForm.cs</DependentUpon>
