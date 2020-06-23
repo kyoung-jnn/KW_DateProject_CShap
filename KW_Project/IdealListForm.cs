@@ -56,7 +56,7 @@ namespace KW_Project
 
             SetData(); // 불러온 ID로 리스트 만들기
         }
-
+        
         private void SetData()
         {
 
@@ -108,7 +108,7 @@ namespace KW_Project
                         // 채팅 버튼
                         dr[3] = new Button();
                         dr[4] = new Button();
-                        ((Button)dr[3]).MouseClick += btnChat_Click;
+                        ((Button)dr[3]).MouseDown += btnChat_Click;
                         ((Button)dr[4]).MouseClick += btnDel_Click;
                     }
                      
@@ -178,12 +178,26 @@ namespace KW_Project
 
         private void btnChat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(((Button)sender).Controls.ToString());
+            // MessageBox.Show(((Button)sender).Controls.ToString());
+           /* ChatServerForms chat = new ChatServerForms();
+            chat.Show();*/
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hi!");
+        }
+
+        private void btnStartChat_Click(object sender, EventArgs e)
+        {
+            ChatServerForms chat = new ChatServerForms();
+            chat.Show();
+        }
+
+        private void btnReceiveChat_Click(object sender, EventArgs e)
+        {
+            ChatClientForm chat = new ChatClientForm(this);
+            chat.Show();
         }
     }
 }
