@@ -21,7 +21,7 @@ namespace KW_Project
         private string currentUserGender;
         private int genderFlag;
 
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=100984");
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Database=project_data;Uid=root;Pwd=1234");
 
         public ProfilePhoto(string id, int gender)
         {
