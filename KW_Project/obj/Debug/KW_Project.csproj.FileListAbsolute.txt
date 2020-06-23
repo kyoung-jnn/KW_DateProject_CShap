@@ -180,3 +180,5 @@ C:\Users\mario\Documents\GitHub\KW_DateProject_Main_Cpp\KW_Project\obj\Debug\KW_
 C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.IdealListForm.resources
 C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.ChatServerForm.resources
 C:\Users\jiwon\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.GotChat.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.ChatServerForm.resources
+C:\Users\mario\Documents\GitHub\KW_DateProject_Cpp\KW_Project\obj\Debug\KW_Project.GotChat.resources
